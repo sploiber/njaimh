@@ -8,7 +8,7 @@ class MembersController < ApplicationController
       flash[:notice] = "Member has been created."
       redirect_to @member
     else
-      flash[:member] = "Member has not been created."
+      flash[:notice] = "Member has not been created."
       render :action => "new"
     end
   end
@@ -27,7 +27,7 @@ class MembersController < ApplicationController
       flash[:notice] = "Member has been updated."
       redirect_to @member
     else
-      flash[:alert] = "Member has not been updated."
+      flash[:notice] = "Member has not been updated."
       redirect_to :action => "edit"
     end
   end
