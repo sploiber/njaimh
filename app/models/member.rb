@@ -1,4 +1,5 @@
 class Member < ActiveRecord::Base
+  paginates_per 7
   attr_accessible :address, :agency, :board_member, :city, :email, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip
   validates :first_name, :presence => true
   validates :last_name, :presence => true

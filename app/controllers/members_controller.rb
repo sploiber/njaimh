@@ -13,7 +13,7 @@ class MembersController < ApplicationController
     end
   end
   def index
-    @members = Member.all
+    @members = Member.order("last_name").page(params[:page])
   end
   def show
     @member = Member.find(params[:id])

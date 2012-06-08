@@ -1,5 +1,6 @@
 <%= link_to "New Member", new_member_path %>
 <h2>Members</h2>
-<% @members.each do |m| %>
-<li><%= link_to m.full, m %>
-<% end %>
+<div id="members">
+<%= paginate @members %>
+<%= render :partial => "members_list" %>
+</div>
