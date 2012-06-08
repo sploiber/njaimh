@@ -9,7 +9,7 @@ class MembersController < ApplicationController
       redirect_to @member
     else
       flash[:member] = "Member has not been created."
-      redirect_to :action => "new"
+      render :action => "new"
     end
   end
   def index
