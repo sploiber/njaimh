@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'iconv'
+puts "use njaimh_development;"
+c = 1
+h = Hash.new
+File.open("members.csv") do |a|
+  while line = a.gets
+    ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
+    valid_string = ic.iconv(line + ' ')[0..-2]
+    b = valid_string.split(13.chr)
+    b.each do |c|
+      d = c.split(',')
+      if d.size == 7 || d.size == 8 || d.size == 10 || (d.size == 11 && d[10] =~ /\//) 
+        if d[0] !~ /Last Name/ && d[0] != nil
+           puts "insert into members (first_name,last_name,agency,address,city,state,zip,work_phone,home_phone,email) values (\"#{d[1]}\",\"#{d[0]}\",\"#{d[2]}\",\"#{d[3]}\",\"#{d[4]}\",\"#{d[5]}\",\"#{d[6]}\",\"#{d[7]}\",\"#{d[8]}\",\"#{d[9]}\");"
+        end
+      else
+         #puts d.size
+      end
+    end
+  end
+end
