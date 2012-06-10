@@ -1,6 +1,12 @@
 class Member < ActiveRecord::Base
   paginates_per 7
   attr_accessible :address, :agency, :board_member, :city, :email, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip
+  define_index do
+    indexes :last_name, :sortable => true
+    indexes :first_name
+    indexes :agency
+    indexes :address
+  end
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :city, :presence => true

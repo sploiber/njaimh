@@ -13,7 +13,8 @@ class MembersController < ApplicationController
     end
   end
   def index
-    @members = Member.order("last_name").page(params[:page])
+    #@members = Member.order("last_name").page(params[:page])
+    @members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
   end
   def show
     @member = Member.find(params[:id])

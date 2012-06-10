@@ -8,15 +8,23 @@
 </head>
 <body>
 
+<div class="overall">
+
 <% flash.each do |key, value| %>
 <div class="flash" id='<%= key %>'>
 <%= value %>
 </div>
 <% end %>
 
+
+<div class="blue_box">
+<h2>NJAIMH Home - Database</h2>
+</div>
+
 <%= link_to "Members", members_path %>
 
 <%= yield %>
 
+</div>
 </body>
 </html>

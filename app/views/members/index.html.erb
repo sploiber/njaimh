@@ -1,5 +1,10 @@
 <%= link_to "New Member", new_member_path %>
 <h2>Members</h2>
+<%= form_tag members_path, :method => :get, :id => "members_search" do %>
+<%= label_tag "search" %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Go!", :name => nil %>
+<% end %>
 <div id="members">
 <%= paginate @members %>
 <%= render :partial => "members_list" %>
