@@ -1,16 +1,35 @@
 <h2><%= @member.full %></h2>
-<h4>First name: <%= @member.first_name %></h4>
-<h4>Last name: <%= @member.last_name %></h4>
-<h4>Agency: <%= @member.agency %></h4>
-<h4>Address: <%= @member.address %></h4>
-<h4>City: <%= @member.city %></h4>
-<h4>State: <%= @member.state %></h4>
-<h4>Zip: <%= @member.zip %></h4>
-<h4>Work phone: <%= @member.work_phone %></h4>
-<h4>Home phone: <%= @member.home_phone %></h4>
-<h4>Email: <%= @member.email %></h4>
-<h4>Last dues paid: <%= @member.last_dues_paid %></h4>
-<h4>Board member: <%= @member.board_member %></h4>
+<table>
+<tr>
+<td>First name</td><td><b><%= @member.first_name %></b></td>
+<td>Last name</td><td><b><%= @member.last_name %></b></td>
+</tr>
+<tr>
+<td>Agency</td><td colspan="3"><b><%= @member.print_agency %></b></td>
+</tr>
+<tr>
+<td>Email</td><td colspan="3"><b><%= @member.print_email %></b></td>
+</tr>
+<tr>
+<td>Home phone</td><td><b><%= @member.print_home_phone %></b></td>
+<td>Work phone</td><td><b><%= @member.print_work_phone %></b></td>
+</tr>
+<tr>
+<td>Address</td><td colspan="3"><b><%= @member.print_address %><b></td>
+</tr>
+<tr>
+<td>City</td><td><b><%= @member.print_city %></b></td>
+<td>State</td><td><b><%= @member.print_state %></b></td>
+</tr>
+<tr>
+<td>Zip</td><td><b><%= @member.zip %></b></td>
+</tr>
+<tr>
+<td>Dues</td><td><b><%= @member.print_last_dues_paid %></b></td>
+<td>Board Member?</td><td><b><%= @member.print_board_member %></b></td>
+</tr>
+</table>
+<h4>Memo: <%= @member.memo %></h4>
 <%= admins_only do %>
 <%= link_to "Edit Member", edit_member_path(@member) %>
 <%= link_to "Delete Member", @member, :method => :delete,

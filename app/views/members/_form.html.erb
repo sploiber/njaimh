@@ -1,53 +1,52 @@
 <%= form_for(@member) do |f| %>
 <%= f.error_messages %>
+<table>
+<tr>
+<td><%= f.label :first_name %></td>
+<td><%= f.text_field :first_name %></td>
+<td><%= f.label :last_name %></td>
+<td><%= f.text_field :last_name %></td>
+</tr>
+<tr>
+<td><%= f.label :agency %></td>
+<td colspan="3"><%= f.text_field :agency %></td>
+</tr>
+<tr>
+<td><%= f.label :email %></td>
+<td colspan="3"><%= f.text_field :email %></td>
+</tr>
+<tr>
+<td><%= f.label :home_phone %></td>
+<td><%= f.text_field :home_phone %></td>
+<td><%= f.label :work_phone %></td>
+<td><%= f.text_field :work_phone %></td>
+</tr>
+<tr>
+<td><%= f.label :address %></td>
+<td colspan="3"><%= f.text_field :address %></td>
+</tr>
+<tr>
+<td><%= f.label :city %></td>
+<td><%= f.text_field :city %></td>
+<td><%= f.label :state %></td>
+<td><%= f.text_field :state %></td>
+</tr>
+<tr>
+<td><%= f.label :zip %></td>
+<td><%= f.text_field :zip %></td>
+</tr>
+<tr>
+<td><%= f.label :last_dues_paid %></td>
+<td><%= f.date_select :last_dues_paid %></td>
+</tr>
+<tr>
+<td><%= f.label :board_member %></td>
+<td><%= f.radio_button :board_member, :true %>Yes</td>
+<td><%= f.radio_button :board_member, :false, :checked => true %>No</td>
+</table>
 <p>
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
-</p>
-<p>
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-</p>
-<p>
-<%= f.label :agency %>
-<%= f.text_field :agency %>
-</p>
-<p>
-<%= f.label :address %>
-<%= f.text_field :address %>
-</p>
-<p>
-<%= f.label :city %>
-<%= f.text_field :city %>
-</p>
-<p>
-<%= f.label :state %>
-<%= f.text_field :state %>
-</p>
-<p>
-<%= f.label :zip %>
-<%= f.text_field :zip %>
-</p>
-<p>
-<%= f.label :work_phone %>
-<%= f.text_field :work_phone %>
-</p>
-<p>
-<%= f.label :home_phone %>
-<%= f.text_field :home_phone %>
-</p>
-<p>
-<%= f.label :email %>
-<%= f.text_field :email %>
-</p>
-<p>
-<%= f.label :last_dues_paid %>
-<%= f.date_select :last_dues_paid %>
-</p>
-<p>
-<%= f.label :board_member %>:<br />
-<%= f.radio_button :board_member, :true %>Yes<BR>
-<%= f.radio_button :board_member, :false, :checked => true %>No
+<%= f.label :memo %>
+<%= f.text_field :memo, :size => 60 %>
 </p>
 <%= f.submit %>
 <% end %>

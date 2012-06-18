@@ -20,4 +20,31 @@ class Member < ActiveRecord::Base
   def full
     "#{first_name} #{last_name}"
   end
+  def print_home_phone
+    home_phone =~ /\d/ ? "#{home_phone}" : "-"
+  end
+  def print_work_phone
+    work_phone =~ /\d/ ? "#{work_phone}" : "-"
+  end
+  def print_agency
+    agency =~ /\w/ ? "#{agency}" : "-"
+  end
+  def print_email
+    email =~ /\w/ ? "#{email}" : "-"
+  end
+  def print_address
+    address =~ /\w/ ? "#{address}" : "-"
+  end
+  def print_city
+    city =~ /\w/ ? "#{city}" : "-"
+  end
+  def print_state
+    state =~ /\w/ ? "#{state}" : "-"
+  end
+  def print_last_dues_paid
+    last_dues_paid =~ /\w/ ? "#{last_dues_paid}" : "-"
+  end
+  def print_board_member
+    board_member == 1 ? "Y" : "N"
+  end
 end
