@@ -21,7 +21,15 @@
 <h2>NJAIMH Home - Database</h2>
 </div>
 
+<nav>
+<%= link_to "Admin", admin_root_path %>
 <%= link_to "Members", members_path %>
+<% if user_signed_in? %>
+  Signed in as <%= current_user.email %>
+<% else %>
+<%= link_to "Sign in", new_user_session_path %>
+<% end %>
+</nav>
 
 <%= yield %>
 

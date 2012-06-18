@@ -4,6 +4,10 @@ Feature: Editing members
   I want a form to edit them
 
   Background:
+    Given there are the following users:
+      | email    | password  | admin |
+      | admin@njaimh.com  |  password | true |
+    And I am signed in as them
     Given there is a member called "Kyle Korver"
     And I am on the homepage
     And I follow "Members"

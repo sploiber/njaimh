@@ -33,6 +33,7 @@ group :test do
   gem 'capybara'
   gem 'cucumber-rails', :require => false
   gem 'factory_girl'
+  gem 'devise'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

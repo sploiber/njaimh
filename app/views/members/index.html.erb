@@ -1,4 +1,6 @@
+<%= admins_only do %>
 <%= link_to "New Member", new_member_path %>
+<% end %>
 <h2>Members</h2>
 <%= form_tag members_path, :method => :get, :id => "members_search" do %>
 <%= label_tag "search" %>

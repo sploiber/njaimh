@@ -11,6 +11,9 @@ end
 When /^(?:|I) fill in "([^"]*)" with "([^"]*)"$/ do |field,value|
   fill_in(field, :with => value)
 end
+When /^(?:|I) check "([^"]*)"$/ do |field|
+  check(field)
+end
 Then /^(?:|I) should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
