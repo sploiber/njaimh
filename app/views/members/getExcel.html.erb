@@ -1,0 +1,10 @@
+<h1>Member Report</h1>
+<div class="form">
+<%= form_for :stuff_select, :url => { :action => "printExcel" } do |f| %>
+<div>
+<%= f.radio_button :o_format, :CSV, :checked => true %>CSV<BR>
+<%= f.radio_button :o_format, :PDF %>PDF<BR>
+</div>
+<%= submit_tag "Go!" %>
+</div>
+<% end %>

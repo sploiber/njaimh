@@ -1,4 +1,6 @@
+require 'csv'
 class MembersController < ApplicationController
+  before_filter :authorize_admin!, :except => [:index, :show]
   def new
     @member = Member.new
   end
@@ -13,8 +15,8 @@ class MembersController < ApplicationController
     end
   end
   def index
-    @members = Member.order("last_name").page(params[:page])
-    #@members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
+    #@members = Member.order("last_name").page(params[:page])
+    @members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
   end
   def show
     @member = Member.find(params[:id])
@@ -37,5 +39,61 @@ class MembersController < ApplicationController
     @member.destroy
     flash[:notice] = "Member has been deleted."
     redirect_to members_path
+  end
+  def printExcel
+    @o_format = params[:stuff_select]["o_format"]
+    @file_name = "njaimh_members"
+    @legend = "All Members Report"
+    @data = Hash.new
+    members = Member.find(:all)
+    for m in members
+      key = "#{m.last_name},#{m.first_name},#{m.address},#{m.city},#{m.state},#{m.zip},#{m.work_phone},#{m.home_phone},#{m.email}"
+      @data[key] = m.agency
+    end
+    @csv_header = ["Last Name", "First Name", "Address", "City", "State", "Zip", "Work Phone Number","Home Phone","Email Address", "Agency"]
+    printCsv
+  end
+private
+  def printCsv
+    if @o_format == "CSV"
+      csv_string = CSV.generate do |csv|
+        csv << @csv_header
+        @data.sort.each do |i|
+          m = i[0].split(',')
+          m << i[1]
+          csv << m
+        end
+      end
+      send_data csv_string, :type => "text/csv", :filename => "#{@file_name}.csv"
+    else
+      pdf = Prawn::Document.new
+      x_out = DateTime.now.strftime("%B %d, %Y")
+      pdf.font_size 20
+      pdf.text "Franklin Township Food Bank", :align => :center
+      pdf.font_size 10
+      pdf.text "PO Box 333", :align => :center
+      pdf.text "60 Millstone Road", :align => :center
+      pdf.text "Somerset, NJ 08875-0333", :align => :center
+      pdf.text "Telephone: (732) 246-0009", :align => :center
+      pdf.text "email: fhasner@ftfb.us", :align => :center
+      pdf.text "Website: http://www.franklinfoodbank.org", :align => :center
+      pdf.font_size 14
+      pdf.move_down 10
+      pdf.text "Report Date: #{x_out}", :align => :center
+      pdf.move_down 40
+      pdf.font_size 20 
+      pdf.text @legend, :align => :center
+      pdf.move_down 20
+      pdf.font_size 14
+      table_out = []
+      table_out << @csv_header
+      @data.sort.each do |i|
+        m = i[0].split(',')
+        m << i[1]
+        table_out << m
+      end
+      pdf.table table_out
+      send_data pdf.render, :type => "application/pdf", :filename => "#{@file_name}.pdf"
+    end
   end
 end

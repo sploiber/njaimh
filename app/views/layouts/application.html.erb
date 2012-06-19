@@ -10,16 +10,15 @@
 
 <div class="overall">
 
-<% flash.each do |key, value| %>
-<div class="flash" id='<%= key %>'>
-<%= value %>
-</div>
-<% end %>
-
-
 <div class="blue_box">
-<h2>NJAIMH Home - Database</h2>
+<h2>NJ-AIMH Member Database</h2>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <nav>
 <%= link_to "Admin", admin_root_path %>
@@ -30,6 +29,12 @@
 <%= link_to "Sign in", new_user_session_path %>
 <% end %>
 </nav>
+
+<% flash.each do |key, value| %>
+<div class="flash" id='<%= key %>'>
+<%= value %>
+</div>
+<% end %>
 
 <%= yield %>
 

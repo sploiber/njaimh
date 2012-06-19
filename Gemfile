@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'therubyracer'
 gem 'kaminari'
 gem 'thinking-sphinx'
+gem 'prawn'
 
 # Gems used only for assets and not required
 # in production environments by default.
