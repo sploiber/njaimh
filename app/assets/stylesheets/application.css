@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font: 14pt "Myriad Pro", Helvetica;
+  font: 13pt "Myriad Pro", Helvetica;
   margin: 5px 10% 0 10%;
   height: 100%;
   padding: 5px;
@@ -41,4 +41,13 @@ ul#members {
 
 ul#members li {
   margin-bottom: 2px;
+}
+
+a {
+    color: #74CC00;
+    height: 80px;
+    width: 100px;
+    padding: 3px;
+    border: 2px dotted #0088dd;
+    background-color: #ffff00;}
 }
