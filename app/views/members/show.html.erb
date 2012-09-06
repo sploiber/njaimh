@@ -28,8 +28,10 @@
 <td>Dues</td><td><b><%= @member.print_last_dues_paid %></b></td>
 <td>Board Member?</td><td><b><%= @member.print_board_member %></b></td>
 </tr>
+<tr>
+<td>Memo</td><td colspan="2"><%= @member.memo %></td>
+</tr>
 </table>
-<h4>Memo: <%= @member.memo %></h4>
 <%= admins_only do %>
 <%= link_to "Edit Member", edit_member_path(@member) %>
 <%= link_to "Delete Member", @member, :method => :delete,

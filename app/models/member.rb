@@ -44,9 +44,9 @@ class Member < ActiveRecord::Base
     state =~ /\w/ ? "#{state}" : "-"
   end
   def print_last_dues_paid
-    last_dues_paid =~ /\w/ ? "#{last_dues_paid}" : "-"
+    last_dues_paid.nil? ? "<no date given>" : "#{last_dues_paid}"
   end
   def print_board_member
-    board_member == 1 ? "Y" : "N"
+    board_member ? "Y" : "N"
   end
 end
