@@ -17,13 +17,13 @@ Feature: Reporting members
     And I choose "stuff_select_o_format_csv"
     And I press "Go!"
     Then I should see the table data:
-       |Last Name|First Name|Address|City|State|Zip|Work Phone Number|Home Phone|Email Address|Agency|
-       |Korver|Kyle|1715 Amwell Road|Somerset|NJ|08873|7322490110|7322460009|kyle@njaimh.org|NJAIMH|
+       |Last Name|First Name|Address_1|Address_2|City|State|Zip|Work Phone Number|Home Phone|Primary Email Address|Secondary Email Address|Agency|
+       |Korver|Kyle|1715 Amwell Road|#1|Somerset|NJ|08873|7322490110|7322460009|kyle@njaimh.org|korver@njaimh.org|NJAIMH|
 
   Scenario:
     And I follow "PrintExcelListing"
     And I choose "stuff_select_o_format_pdf"
     And I press "Go!"
     Then I should see the PDF table data:
-       |Last Name|First Name|Address|City|State|Zip|Work Phone Number|Home Phone|Email Address|Agency|
-       |Korver|Kyle|1715 Amwell Road|Somerset|NJ|08873|7322490110|7322460009|kyle@njaimh.org|NJAIMH|
+       |Last Name|First Name|Address_1|Address_2|City|State|Zip|Work Phone Number|Home Phone|Primary Email Address|Secondary Email Address|Agency|
+       |Korver|Kyle|1715 Amwell Road|#1|Somerset|NJ|08873|7322490110|7322460009|kyle@njaimh.org|korver@njaimh.org|NJAIMH|
