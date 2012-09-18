@@ -37,6 +37,9 @@
 <tr>
 <td>Memo</td><td colspan="2"><%= @member.memo %></td>
 </tr>
+<tr>
+<td>Exec Board Position</td><td colspan="2"><%= @member.print_exec_board_position %></td>
+</tr>
 </table>
 <%= admins_only do %>
 <%= link_to "Edit Member", edit_member_path(@member) %>
