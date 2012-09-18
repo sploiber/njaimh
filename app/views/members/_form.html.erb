@@ -12,8 +12,12 @@
 <td colspan="3"><%= f.text_field :agency %></td>
 </tr>
 <tr>
-<td><%= f.label :email %></td>
-<td colspan="3"><%= f.text_field :email %></td>
+<td><%= f.label :primary_email %></td>
+<td colspan="3"><%= f.text_field :email_1 %></td>
+</tr>
+<tr>
+<td><%= f.label :secondary_email %></td>
+<td colspan="3"><%= f.text_field :email_2 %></td>
 </tr>
 <tr>
 <td><%= f.label :home_phone %></td>
@@ -23,7 +27,11 @@
 </tr>
 <tr>
 <td><%= f.label :address %></td>
-<td colspan="3"><%= f.text_field :address %></td>
+<td colspan="3"><%= f.text_field :address_1 %></td>
+</tr>
+<tr>
+<td><%= f.label :more_address %></td>
+<td colspan="3"><%= f.text_field :address_2 %></td>
 </tr>
 <tr>
 <td><%= f.label :city %></td>
