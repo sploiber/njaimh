@@ -15,8 +15,8 @@ class MembersController < ApplicationController
     end
   end
   def index
-    #@members = Member.order("last_name").page(params[:page])
-    @members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
+    @members = Member.order("last_name").page(params[:page])
+    #@members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
   end
   def show
     @member = Member.find(params[:id])
@@ -47,10 +47,10 @@ class MembersController < ApplicationController
     @data = Hash.new
     members = Member.find(:all)
     for m in members
-      key = "#{m.last_name},#{m.first_name},#{m.address},#{m.city},#{m.state},#{m.zip},#{m.work_phone},#{m.home_phone},#{m.email}"
+      key = "#{m.last_name},#{m.first_name},#{m.address_1},#{m.address_2},#{m.city},#{m.state},#{m.zip},#{m.work_phone},#{m.home_phone},#{m.email_1},#{m.email_2}"
       @data[key] = m.agency
     end
-    @csv_header = ["Last Name", "First Name", "Address", "City", "State", "Zip", "Work Phone Number","Home Phone","Email Address", "Agency"]
+    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "State", "Zip", "Work Phone Number","Home Phone","Primary Email Address", "Secondary Email Address", "Agency"]
     printCsv
   end
 private
