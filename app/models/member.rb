@@ -54,4 +54,7 @@ class Member < ActiveRecord::Base
   def print_board_member
     board_member ? "Y" : "N"
   end
+  def print_exec_board_position
+    exec_board_position =~ /\w/ ? "#{exec_board_position}" : "-"
+  end
 end
