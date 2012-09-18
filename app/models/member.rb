@@ -1,6 +1,6 @@
 class Member < ActiveRecord::Base
   paginates_per 7
-  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position
   define_index do
     indexes :last_name, :sortable => true
     indexes :first_name
