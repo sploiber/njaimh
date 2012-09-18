@@ -1,11 +1,10 @@
 class Member < ActiveRecord::Base
   paginates_per 7
-  attr_accessible :address, :agency, :board_member, :city, :email, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo
   define_index do
     indexes :last_name, :sortable => true
     indexes :first_name
     indexes :agency
-    indexes :address
     set property :enable_star => 1
     set property :min_infix_len => 3
   end
@@ -31,11 +30,17 @@ class Member < ActiveRecord::Base
   def print_agency
     agency =~ /\w/ ? "#{agency}" : "-"
   end
-  def print_email
-    email =~ /\w/ ? "#{email}" : "-"
+  def print_email_1
+    email_1 =~ /\w/ ? "#{email_1}" : "-"
   end
-  def print_address
-    address =~ /\w/ ? "#{address}" : "-"
+  def print_email_2
+    email_2 =~ /\w/ ? "#{email_2}" : "-"
+  end
+  def print_address_1
+    address_1 =~ /\w/ ? "#{address_1}" : "-"
+  end
+  def print_address_2
+    address_2 =~ /\w/ ? "#{address_2}" : "-"
   end
   def print_city
     city =~ /\w/ ? "#{city}" : "-"
