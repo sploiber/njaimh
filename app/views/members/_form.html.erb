@@ -47,13 +47,23 @@
 </tr>
 <tr>
 <td><%= f.label :board_member %></td>
+<% if @member.board_member %>
+<td><%= f.radio_button :board_member, :true, :checked => true  %>Yes</td>
+<td><%= f.radio_button :board_member, :false %>No</td>
+<% else %>
 <td><%= f.radio_button :board_member, :true %>Yes</td>
 <td><%= f.radio_button :board_member, :false, :checked => true %>No</td>
+<% end %>
 </tr>
 <tr>
 <td><%= f.label :org_member %></td>
+<% if @member.org_member %>
+<td><%= f.radio_button :org_member, :true, :checked => true  %>Yes</td>
+<td><%= f.radio_button :org_member, :false %>No</td>
+<% else %>
 <td><%= f.radio_button :org_member, :true %>Yes</td>
 <td><%= f.radio_button :org_member, :false, :checked => true %>No</td>
+<% end %>
 </tr>
 <tr>
 <td><%= f.label :memo %></td>
