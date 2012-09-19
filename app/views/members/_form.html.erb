@@ -9,15 +9,15 @@
 </tr>
 <tr>
 <td><%= f.label :agency %></td>
-<td colspan="3"><%= f.text_field :agency %></td>
+<td><%= f.text_field :agency %></td>
+<td><%= f.label :fax_number %></td>
+<td><%= f.text_field :fax_number %></td>
 </tr>
 <tr>
 <td><%= f.label :primary_email %></td>
-<td colspan="3"><%= f.text_field :email_1 %></td>
-</tr>
-<tr>
+<td><%= f.text_field :email_1 %></td>
 <td><%= f.label :secondary_email %></td>
-<td colspan="3"><%= f.text_field :email_2 %></td>
+<td><%= f.text_field :email_2 %></td>
 </tr>
 <tr>
 <td><%= f.label :home_phone %></td>
@@ -27,11 +27,9 @@
 </tr>
 <tr>
 <td><%= f.label :address_1 %></td>
-<td colspan="3"><%= f.text_field :address_1 %></td>
-</tr>
-<tr>
+<td><%= f.text_field :address_1 %></td>
 <td><%= f.label :address_2 %></td>
-<td colspan="3"><%= f.text_field :address_2 %></td>
+<td><%= f.text_field :address_2 %></td>
 </tr>
 <tr>
 <td><%= f.label :city %></td>
@@ -53,22 +51,16 @@
 <td><%= f.radio_button :board_member, :false, :checked => true %>No</td>
 </tr>
 <tr>
-<td><%= f.label :fax_number %></td>
-<td><%= f.text_field :fax_number %></td>
-</tr>
-<tr>
 <td><%= f.label :org_member %></td>
 <td><%= f.radio_button :org_member, :true %>Yes</td>
 <td><%= f.radio_button :org_member, :false, :checked => true %>No</td>
 </tr>
+<tr>
+<td><%= f.label :memo %></td>
+<td><%= f.text_field :memo, :size => 60 %></td>
+<td><%= f.label :exec_board_position %></td>
+<td><%= f.text_field :exec_board_position, :size => 60 %></td>
+</tr>
 </table>
-<p>
-<%= f.label :memo %>
-<%= f.text_field :memo, :size => 60 %>
-</p>
-<p>
-<%= f.label :exec_board_position %>
-<%= f.text_field :exec_board_position, :size => 60 %>
-</p>
 <%= f.submit %>
 <% end %>
