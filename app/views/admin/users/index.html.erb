@@ -1,4 +1,4 @@
-<%= link_to "New User", new_admin_user_path %>
+<%= link_to "New User", new_admin_user_path, :class => "btn btn-primary btn-large" %>
 <ul>
 <% @users.each do |user| %>
 <li><%= link_to user, [:admin, user] %></li>
