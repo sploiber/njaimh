@@ -12,5 +12,6 @@ FactoryGirl.define do
     email_1 'kyle@njaimh.org'
     email_2 'korver@njaimh.org'
     agency 'NJAIMH'
+    fax_number '7322490111'
   end
 end

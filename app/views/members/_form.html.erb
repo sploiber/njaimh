@@ -51,6 +51,16 @@
 <td><%= f.label :board_member %></td>
 <td><%= f.radio_button :board_member, :true %>Yes</td>
 <td><%= f.radio_button :board_member, :false, :checked => true %>No</td>
+</tr>
+<tr>
+<td><%= f.label :fax_number %></td>
+<td><%= f.text_field :fax_number %></td>
+</tr>
+<tr>
+<td><%= f.label :org_member %></td>
+<td><%= f.radio_button :org_member, :true %>Yes</td>
+<td><%= f.radio_button :org_member, :false, :checked => true %>No</td>
+</tr>
 </table>
 <p>
 <%= f.label :memo %>
