@@ -1,5 +1,5 @@
 <%= admins_only do %>
-<%= link_to "New Member", new_member_path %>
+<%= link_to "New Member", new_member_path, :class => "btn btn-primary btn-large" %>
 <% end %>
 <h2>Members</h2>
 <%= form_tag members_path, :method => :get, :id => "members_search" do %>
@@ -12,5 +12,5 @@
 <%= render :partial => "members_list" %>
 </div>
 <%= admins_only do %>
-<%= link_to "PrintExcelListing", :action => "getExcel", :controller => "members" %>
+<%= link_to "PrintExcelListing", :action => "getExcel", :controller => "members", :class => "btn btn-primary btn-large" %>
 <% end %>
