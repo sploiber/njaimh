@@ -2,7 +2,8 @@
   *= require_tree .
 */
 .content {
-  background-color: #eee;
+  background-color: #ff99cc;
+  color: #330066;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
@@ -11,4 +12,15 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.navbar {
+  .navbar-inner {
+    background-color: #330066;
+    background-image: none;
+  }
+}
+
+#footer { font-size: 12px; 
+	  font-family: geneva, arial;
 }
