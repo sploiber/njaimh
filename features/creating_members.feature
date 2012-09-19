@@ -23,8 +23,8 @@ Feature: Creating members
     And I press "Finish"
     Then I should see "Member has been created."
     And I should be on the member page for "Kyle Korver"
-    And I should see "First nameKyle"
-    And I should see "Last nameKorver"
+    And I should see "First Name Kyle"
+    And I should see "Last Name Korver"
 
   @members
   Scenario: Creating a member without a first name
