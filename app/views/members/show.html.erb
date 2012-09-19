@@ -1,30 +1,48 @@
 <h2><%= @member.full %></h2>
 <table>
 <tr>
-<td>First name</td><td><b><%= @member.first_name %></b></td>
-<td>Last name</td><td><b><%= @member.last_name %></b></td>
+<td>First Name</td>
+<td><b><%= @member.first_name %></b></td>
 </tr>
 <tr>
-<td>Agency</td><td colspan="3"><b><%= @member.print_agency %></b></td>
+<td>Last Name</td>
+<td><b><%= @member.last_name %></b></td>
 </tr>
 <tr>
-<td>Primary Email</td><td colspan="3"><b><%= @member.print_email_1 %></b></td>
+<td>Agency</td>
+<td><b><%= @member.print_agency %></b></td>
 </tr>
 <tr>
-<td>Secondary Email</td><td colspan="3"><b><%= @member.print_email_2 %></b></td>
+<td>Primary Email</td>
+<td><b><%= @member.print_email_1 %></b></td>
 </tr>
 <tr>
-<td>Home phone</td><td><b><%= @member.print_home_phone %></b></td>
+<td>Secondary Email</td>
+<td><b><%= @member.print_email_2 %></b></td>
+</tr>
+<tr>
+<td>Home phone</td>
+<td><b><%= @member.print_home_phone %></b></td>
+</tr>
+<tr>
 <td>Work phone</td><td><b><%= @member.print_work_phone %></b></td>
 </tr>
 <tr>
-<td>Address</td><td colspan="3"><b><%= @member.print_address_1 %><b></td>
+<td>Fax Number</td>
+<td><%= @member.print_fax_number %></td>
 </tr>
 <tr>
-<td>Address</td><td colspan="3"><b><%= @member.print_address_2 %><b></td>
+<td>Address</td>
+<td><b><%= @member.print_address_1 %><b></td>
+</tr>
+<tr>
+<td>Address</td>
+<td><b><%= @member.print_address_2 %><b></td>
 </tr>
 <tr>
 <td>City</td><td><b><%= @member.print_city %></b></td>
+</tr>
+<tr>
 <td>State</td><td><b><%= @member.print_state %></b></td>
 </tr>
 <tr>
@@ -32,19 +50,19 @@
 </tr>
 <tr>
 <td>Dues</td><td><b><%= @member.print_last_dues_paid %></b></td>
+</tr>
+<tr>
+<td>Memo</td>
+<td><%= @member.print_memo %></td>
+</tr>
 <td>Board Member?</td><td><b><%= @member.print_board_member %></b></td>
-</tr>
-<tr>
-<td>Memo</td><td colspan="2"><%= @member.memo %></td>
-</tr>
-<tr>
-<td>Fax Number</td><td colspan="2"><%= @member.print_fax_number %></td>
 </tr>
 <tr>
 <td>Org Member?</td><td><b><%= @member.print_org_member %></b></td>
 </tr>
 <tr>
-<td>Exec Board Position</td><td colspan="2"><%= @member.print_exec_board_position %></td>
+<td>Exec Board Position</td>
+<td><%= @member.print_exec_board_position %></td>
 </tr>
 </table>
 <%= admins_only do %>

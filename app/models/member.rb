@@ -60,6 +60,9 @@ class Member < ActiveRecord::Base
   def print_fax_number
     fax_number =~ /\d/ ? "#{fax_number}" : "-"
   end
+  def print_memo
+    memo =~ /\w/ ? "#{memo}" : "-"
+  end
   def print_org_member
     org_member ? "Y" : "N"
   end
