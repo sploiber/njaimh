@@ -1,6 +1,6 @@
 class Member < ActiveRecord::Base
   paginates_per 7
-  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member
   define_index do
     indexes :last_name, :sortable => true
     indexes :first_name
@@ -56,5 +56,11 @@ class Member < ActiveRecord::Base
   end
   def print_exec_board_position
     exec_board_position =~ /\w/ ? "#{exec_board_position}" : "-"
+  end
+  def print_fax_number
+    fax_number =~ /\d/ ? "#{fax_number}" : "-"
+  end
+  def print_org_member
+    org_member ? "Y" : "N"
   end
 end
