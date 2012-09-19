@@ -17,7 +17,7 @@ Feature: Editing members
   @members
   Scenario: Updating a member's first name
     When I fill in "First name" with "Bruce"
-    And I press "Update Member"
+    And I press "Finish"
     Then I should see "Member has been updated."
     Then I should be on the member page for "Bruce Korver"
     And I should see "Bruce Korver"
@@ -25,7 +25,7 @@ Feature: Editing members
 
   Scenario: Updating a member's last name
     When I fill in "Last name" with "Chan"
-    And I press "Update Member"
+    And I press "Finish"
     Then I should see "Member has been updated."
     Then I should be on the member page for "Kyle Chan"
     And I should see "Kyle Chan"

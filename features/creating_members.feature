@@ -20,7 +20,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has been created."
     And I should be on the member page for "Kyle Korver"
     And I should see "First nameKyle"
@@ -33,7 +33,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "First name can't be blank"
 
@@ -44,7 +44,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "Last name can't be blank"
 
@@ -56,7 +56,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "First name is too long"
 
@@ -68,7 +68,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "Last name is too long"
 
@@ -79,7 +79,7 @@ Feature: Creating members
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "City can't be blank"
 
@@ -91,7 +91,7 @@ Feature: Creating members
     And I fill in "City" with "12"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "City is too short"
 
@@ -103,7 +103,7 @@ Feature: Creating members
     And I fill in "City" with "0123456789012345678901"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "City is too long"
 
@@ -114,7 +114,7 @@ Feature: Creating members
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "State can't be blank"
 
@@ -126,7 +126,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "1"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "State is too short"
 
@@ -138,7 +138,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "123"
     And I fill in "Zip" with "08873"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "State is too long"
 
@@ -149,7 +149,7 @@ Feature: Creating members
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "Zip can't be blank"
 
@@ -160,7 +160,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "1234"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "Zip is too short"
 
@@ -172,6 +172,6 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
-    And I press "Create Member"
+    And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "Zip is too long"
