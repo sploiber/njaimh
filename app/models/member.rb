@@ -11,6 +11,7 @@ class Member < ActiveRecord::Base
   validates_length_of :city, :minimum => 3, :maximum => 20
   validates_length_of :state, :minimum => 2, :maximum => 2
   validates_length_of :zip, :minimum => 5, :maximum => 10
+  validate :work_phone_may_not_have_alphas, :home_phone_may_not_have_alphas, :fax_number_may_not_have_alphas, :primary_email_must_have_at_sign, :secondary_email_must_have_at_sign
   def full
     "#{first_name} #{last_name}"
   end
@@ -58,5 +59,30 @@ class Member < ActiveRecord::Base
   end
   def print_org_member
     org_member ? "Y" : "N"
+  end
+  def work_phone_may_not_have_alphas
+    if work_phone =~ /\w/
+      errors.add(:work_phone, "may not have letters")
+    end
+  end
+  def home_phone_may_not_have_alphas
+    if home_phone =~ /\w/
+      errors.add(:home_phone, "may not have letters")
+    end
+  end
+  def fax_number_may_not_have_alphas
+    if fax_number =~ /\w/
+      errors.add(:fax_number, "may not have letters")
+    end
+  end
+  def primary_email_must_have_at_sign
+    if email_1.length > 0 and email_1 !~ /\@/
+      errors.add(:primary_email, "must have \@ sign")
+    end
+  end
+  def secondary_email_must_have_at_sign
+    if email_2.length > 0 and email_2 !~ /\@/
+      errors.add(:secondary_email, "must have \@ sign")
+    end
   end
 end
