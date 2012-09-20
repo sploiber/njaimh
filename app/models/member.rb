@@ -1,13 +1,6 @@
 class Member < ActiveRecord::Base
   paginates_per 7
   attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_dues_paid, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member
-  define_index do
-    indexes :last_name, :sortable => true
-    indexes :first_name
-    indexes :agency
-    set property :enable_star => 1
-    set property :min_infix_len => 3
-  end
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :city, :presence => true
