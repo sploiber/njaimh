@@ -175,3 +175,68 @@ Feature: Creating members
     And I press "Finish"
     Then I should see "Member has not been created."
     And I should see "Zip is too long"
+
+  @members
+  Scenario: Creating a member with a bad work phone
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "Work phone" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Work phone may not have letters"
+
+  @members
+  Scenario: Creating a member with a bad home phone
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "Home phone" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Home phone may not have letters"
+
+  @members
+  Scenario: Creating a member with a bad fax number
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "Fax number" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Fax number may not have letters"
+
+  @members
+  Scenario: Creating a member with a bad primary email
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "member_email_1" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Primary email must have @ sign"
+
+  @members
+  Scenario: Creating a member with a bad secondary email
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "member_email_2" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Secondary email must have @ sign"
