@@ -61,17 +61,17 @@ class Member < ActiveRecord::Base
     org_member ? "Y" : "N"
   end
   def work_phone_may_not_have_alphas
-    if work_phone =~ /\w/
+    if work_phone =~ /[a-zA-Z]/
       errors.add(:work_phone, "may not have letters")
     end
   end
   def home_phone_may_not_have_alphas
-    if home_phone =~ /\w/
+    if home_phone =~ /[a-zA-Z]/
       errors.add(:home_phone, "may not have letters")
     end
   end
   def fax_number_may_not_have_alphas
-    if fax_number =~ /\w/
+    if fax_number =~ /[a-zA-Z]/
       errors.add(:fax_number, "may not have letters")
     end
   end
