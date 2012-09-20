@@ -31,6 +31,14 @@ Then /^(?:|I) should not see "([^"]*)"$/ do |text|
     assert page.has_no_content?(text)
   end
 end
+Then /^the radio button "([^"]*)" should be checked$/ do |label|
+  field_checked = find_field(label)['checked']
+  if field_checked.respond_to? :should
+    field_checked.should be_true
+  else
+    assert field_checked
+  end
+end
 Then /^(?:|I) should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should

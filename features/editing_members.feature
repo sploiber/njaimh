@@ -30,3 +30,17 @@ Feature: Editing members
     Then I should be on the member page for "Kyle Chan"
     And I should see "Kyle Chan"
     And I should not see "Kyle Korver"
+
+  Scenario: Tweaking the org member field
+    Then the radio button "member_org_member_false" should be checked
+    And I choose "member_org_member_true"
+    And I press "Finish"
+    Then I should see "Member has been updated."
+    Then I should see "Org Member?Y"
+
+  Scenario: Tweaking the board member field
+    Then the radio button "member_board_member_true" should be checked
+    And I choose "member_board_member_false"
+    And I press "Finish"
+    Then I should see "Member has been updated."
+    Then I should see "Board Member?N"
