@@ -23,9 +23,10 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
+  gem 'jquery-ui-rails'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.1'
 
 group :test, :development do
   gem 'rspec-rails'
