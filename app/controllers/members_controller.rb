@@ -1,6 +1,6 @@
 require 'csv'
 class MembersController < ApplicationController
-  before_filter :authorize_admin!, :except => [:index, :show]
+  before_filter :authorize_admin!, :except => [:index, :show, :autocom]
   def new
     @member = Member.new
   end
@@ -17,6 +17,11 @@ class MembersController < ApplicationController
   def index
     @members = Member.order("last_name").page(params[:page])
     #@members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
+    @last_names = Member.all.map(&:last_name)
+    respond_to do |format|
+      format.html
+      format.json { render :json => @last_names }
+    end
   end
   def show
     @member = Member.find(params[:id])

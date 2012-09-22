@@ -19,6 +19,6 @@
 $(function() {
 
   $(".member_last_name").autocomplete({
-    source: '/members/autocom.json'
+    source: '/members/index.json'
   });
 });
