@@ -2,9 +2,9 @@
 <%= link_to "New Member", new_member_path, :class => "btn btn-primary btn-large" %>
 <% end %>
 <h2>Members</h2>
-<%= form_tag members_path, :method => :get, :id => "members_search" do %>
-<%= label_tag "search" %>
-<%= text_field_tag :search, params[:search] %>
+<%= form_tag :method => :get do %>
+<%= label_tag "Search by Last Name" %>
+<%= text_field_tag :member_last_name, nil, :class => 'member_last_name' %>
 <%= submit_tag "Go!", :name => nil %>
 <% end %>
 <div id="members">
