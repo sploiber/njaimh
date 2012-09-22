@@ -12,7 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require jquery.ui.all
-//= require autocomplete-rails
+//= require bootstrap
 //= require_tree .
+
+$(function() {
+
+  $(".member_last_name").autocomplete({
+    source: '/members/autocom.json'
+  });
+});
