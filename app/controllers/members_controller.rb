@@ -17,7 +17,8 @@ class MembersController < ApplicationController
   def index
     @members = Member.order("last_name").page(params[:page])
     #@members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
-    @last_names = Member.all.map(&:last_name)
+    #@last_names = Member.all.map(&:last_name)
+    @last_names = Member.find(:all,:conditions => ['last_name LIKE ?', "#{params[:term]}%"]).map(&:last_name)
     respond_to do |format|
       format.html
       format.json { render :json => @last_names }
