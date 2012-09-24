@@ -16,6 +16,9 @@ class MembersController < ApplicationController
   end
   def index
     @members = Member.order("last_name").page(params[:page])
+    if not params[:member_last_name].nil?
+      @members = Member.order("last_name").by_last_name(params[:member_last_name]).page(params[:page])
+    end
     #@members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
     #@last_names = Member.all.map(&:last_name)
     @last_names = Member.find(:all,:conditions => ['last_name LIKE ?', "#{params[:term]}%"]).map(&:last_name)
