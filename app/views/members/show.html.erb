@@ -75,6 +75,10 @@
 <td>Dues Paid Year</td>
 <td><%= @member.print_dues_paid_year %></td>
 </tr>
+<tr>
+<td>Title/Credential</td>
+<td><%= @member.print_title_credential %></td>
+</tr>
 </table>
 <%= admins_only do %>
 <%= link_to "Edit Member", edit_member_path(@member), :class => "btn btn-primary btn-large" %>

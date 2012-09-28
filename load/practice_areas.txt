@@ -1,0 +1,9 @@
+use njaimh_development;
+insert into practice_areas (id,name) values (1,'Academia');
+insert into practice_areas (id,name) values (2,'Psychiatric');
+insert into practice_areas (id,name) values (3,'Early Childhood');
+insert into practice_areas (id,name) values (4,'Education');
+insert into practice_areas (id,name) values (5,'Law');
+insert into practice_areas (id,name) values (6,'Public Health');
+insert into practice_areas (id,name) values (7,'Medical');
+insert into practice_areas (id,name) values (8,'Other Health');

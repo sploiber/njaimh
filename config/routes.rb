@@ -14,6 +14,7 @@ Njaimh::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :practice_areas
   resources :members do
     get 'getExcel', :on => :collection
     post 'printExcel', :on => :collection

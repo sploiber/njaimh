@@ -1,6 +1,7 @@
 class Member < ActiveRecord::Base
   paginates_per 7
-  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension
+  belongs_to :practice_area
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :city, :presence => true
@@ -60,6 +61,9 @@ class Member < ActiveRecord::Base
   end
   def print_work_extension
     work_extension =~ /\d/ ? "#{work_extension}" : "-"
+  end
+  def print_title_credential
+    title_credential =~ /\d/ ? "#{title_credential}" : "-"
   end
   def print_county
     county =~ /\w/ ? "#{county}" : "-"

@@ -78,9 +78,18 @@
 <td><%= f.text_field :exec_board_position, :size => 60 %></td>
 </tr>
 <tr>
+<td><%= f.label :title_credential %></td>
+<td><%= f.text_field :title_credential, :size => 60 %></td>
+</tr>
+<tr>
 <td><%= f.label :memo %></td>
 <td><%= f.text_field :memo, :size => 60 %></td>
 </tr>
+<tr>
+<td><%= f.label :practice_area %>:<br /></td>
+<td><%= f.collection_select(:practice_area_id, PracticeArea.find(:all, :order => :name), :id, :name) %></td>
+</tr>
+
 </table>
 <%= f.submit "Finish", :class => 'btn btn-primary btn-large' %>
 <% end %>

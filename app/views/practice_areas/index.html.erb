@@ -1,0 +1,9 @@
+<%= link_to "New Practice Area", new_practice_area_path, :class => "btn btn-primary btn-large" %>
+<h2>Practice Areas</h2>
+<%= paginate @practice_areas %>
+<ul>
+<% @practice_areas.each do |practice_area| %>
+<li><%= link_to practice_area.name, practice_area %></li>
+<% end %>
+</ul>
+<%= link_to "Return to Admin Top", admin_root_path, :class => "btn btn-primary btn-large" %>
