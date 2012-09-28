@@ -8,7 +8,7 @@ Feature: Reporting members
     | admin@ticketee.com  |  password | true |
   And I am signed in as them
     Given I am on the homepage
-    Given there is a member "Kyle Korver" with a practice area "Public Health"
+    Given there is a member "Kyle Korver" with a practice area "Public Health" and an endorsement level "Level 2"
     Given I am on the homepage
     When I follow "Members"
 

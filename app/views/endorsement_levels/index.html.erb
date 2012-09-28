@@ -1,0 +1,9 @@
+<%= link_to "New Endorsement Level", new_endorsement_level_path, :class => "btn btn-primary btn-large" %>
+<h2>Endorsement Levels</h2>
+<%= paginate @endorsement_levels %>
+<ul>
+<% @endorsement_levels.each do |endorsement_level| %>
+<li><%= link_to endorsement_level.name, endorsement_level %></li>
+<% end %>
+</ul>
+<%= link_to "Return to Admin Top", admin_root_path, :class => "btn btn-primary btn-large" %>

@@ -83,6 +83,10 @@
 <td>Practice Area</td>
 <td><%= @member.print_practice_area %></td>
 </tr>
+<tr>
+<td>Endorsement level</td>
+<td><%= @member.print_endorsement_level %></td>
+</tr>
 </table>
 <%= admins_only do %>
 <%= link_to "Edit Member", edit_member_path(@member), :class => "btn btn-primary btn-large" %>

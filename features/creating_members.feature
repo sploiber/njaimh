@@ -10,12 +10,14 @@ Feature: Creating members
     And I am signed in as them
     Given I am on the homepage
     Given there is a practice area called "Public Health"
+    Given there is an endorsement level called "Applicant"
     When I follow "Members"
     When I follow "New Member"
 
   @members
   Scenario: Creating a member
     And I select "Public Health" from "member[practice_area_id]"
+    And I select "Applicant" from "member[endorsement_level_id]"
     And I fill in "First name" with "Kyle"
     And I fill in "Last name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"

@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
   paginates_per 7
   belongs_to :practice_area
-  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id, :endorsement_level_id
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :city, :presence => true
@@ -77,6 +77,13 @@ class Member < ActiveRecord::Base
   def print_practice_area
     if not practice_area_id.nil?
       return PracticeArea.find(practice_area_id).name
+    else
+      return "-"
+    end
+  end
+  def print_endorsement_level
+    if not endorsement_level_id.nil?
+      return EndorsementLevel.find(endorsement_level_id).name
     else
       return "-"
     end

@@ -21,5 +21,6 @@ FactoryGirl.define do
     org_member_type 'Regular'
     title_credential 'Emperor'
     practice_area 'Public Health'
+    endorsement_level 'Applicant'
   end
 end

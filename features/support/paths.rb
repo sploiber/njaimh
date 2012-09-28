@@ -8,6 +8,8 @@ module NavigationHelpers
         member_path(Member.scoped(:conditions => { :first_name => first_n, :last_name => last_n }).first)
       when /the practice area page for "([^\"]*)"/
         practice_area_path(PracticeArea.scoped(:conditions => { :name => $1 }).first)
+      when /the endorsement level page for "([^\"]*)"/
+        endorsement_level_path(EndorsementLevel.scoped(:conditions => { :name => $1 }).first)
       end
   end
 end

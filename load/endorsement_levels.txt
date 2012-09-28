@@ -1,0 +1,8 @@
+use njaimh_development;
+insert into endorsement_levels (id,name) values (1,'N/A');
+insert into endorsement_levels (id,name) values (2,'Applicant');
+insert into endorsement_levels (id,name) values (3,'Level 1');
+insert into endorsement_levels (id,name) values (4,'Level 2');
+insert into endorsement_levels (id,name) values (5,'Level 3');
+insert into endorsement_levels (id,name) values (6,'Level 4');
+insert into endorsement_levels (id,name) values (7,'Mentor');
