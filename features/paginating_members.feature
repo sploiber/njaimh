@@ -3,7 +3,7 @@ Feature: Paginating members
   I want to paginate member results
 
   Background:
-  Given there are 10 members
+  Given there are 10 members with practice area "Law"
 
   Scenario:
     Given I am on the homepage
