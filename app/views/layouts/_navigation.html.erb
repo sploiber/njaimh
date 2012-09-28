@@ -2,7 +2,6 @@
   <li><%= link_to "NJ-AIMH Home", root_path %></li>
   <li><%= link_to "Admin", admin_root_path %></li>
   <li><%= link_to "Members", members_path %></li>
-  <li><%= link_to "Practice Areas", practice_areas_path %></li>
   <% if user_signed_in? %>
     <li><%= link_to('Sign out', destroy_user_session_path, :method=>'delete') %>        </li>
   <% else %>
