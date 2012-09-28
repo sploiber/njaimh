@@ -26,6 +26,10 @@
 <td><%= f.text_field :work_phone %></td>
 </tr>
 <tr>
+<td><%= f.label :work_extension %></td>
+<td><%= f.text_field :work_extension %></td>
+</tr>
+<tr>
 <td><%= f.label :address_1 %></td>
 <td><%= f.text_field :address_1 %></td>
 <td><%= f.label :address_2 %></td>
@@ -34,26 +38,14 @@
 <tr>
 <td><%= f.label :city %></td>
 <td><%= f.text_field :city %></td>
+<td><%= f.label :county %></td>
+<td><%= f.text_field :county %></td>
+</tr>
+<tr>
 <td><%= f.label :state %></td>
 <td><%= f.text_field :state %></td>
-</tr>
-<tr>
 <td><%= f.label :zip %></td>
 <td><%= f.text_field :zip %></td>
-</tr>
-<tr>
-<td><%= f.label :last_dues_paid %></td>
-<td><%= f.date_select :last_dues_paid %></td>
-</tr>
-<tr>
-<td><%= f.label :board_member %></td>
-<% if @member.board_member %>
-<td><%= f.radio_button :board_member, :true, :checked => true  %>Yes</td>
-<td><%= f.radio_button :board_member, :false %>No</td>
-<% else %>
-<td><%= f.radio_button :board_member, :true %>Yes</td>
-<td><%= f.radio_button :board_member, :false, :checked => true %>No</td>
-<% end %>
 </tr>
 <tr>
 <td><%= f.label :org_member %></td>
@@ -66,10 +58,28 @@
 <% end %>
 </tr>
 <tr>
+<td><%= f.label :org_member_type %></td>
+<td><%= f.text_field :org_member_type %></td>
+<td><%= f.label :dues_paid_year %></td>
+<td><%= f.text_field :dues_paid_year %></td>
+</tr>
+<tr>
+<td><%= f.label :board_member %></td>
+<% if @member.board_member %>
+<td><%= f.radio_button :board_member, :true, :checked => true  %>Yes</td>
+<td><%= f.radio_button :board_member, :false %>No</td>
+<% else %>
+<td><%= f.radio_button :board_member, :true %>Yes</td>
+<td><%= f.radio_button :board_member, :false, :checked => true %>No</td>
+<% end %>
+</tr>
+<tr>
+<td><%= f.label :board_position %></td>
+<td><%= f.text_field :exec_board_position, :size => 60 %></td>
+</tr>
+<tr>
 <td><%= f.label :memo %></td>
 <td><%= f.text_field :memo, :size => 60 %></td>
-<td><%= f.label :exec_board_position %></td>
-<td><%= f.text_field :exec_board_position, :size => 60 %></td>
 </tr>
 </table>
 <%= f.submit "Finish", :class => 'btn btn-primary btn-large' %>

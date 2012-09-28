@@ -216,6 +216,32 @@ Feature: Creating members
     And I should see "Fax number may not have letters"
 
   @members
+  Scenario: Creating a member with a bad work extension
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "Work extension" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Work extension may not have letters"
+
+  @members
+  Scenario: Creating a member with a bad dues paid year
+    And I fill in "First name" with "Kyle"
+    And I fill in "Last name" with "Korver"
+    And I fill in "Address" with "1715 Amwell Road"
+    And I fill in "City" with "Somerset"
+    And I fill in "State" with "NJ"
+    And I fill in "Zip" with "012345678901"
+    And I fill in "Dues paid year" with "yes"
+    And I press "Finish"
+    Then I should see "Member has not been created."
+    And I should see "Dues paid year may not have letters"
+
+  @members
   Scenario: Creating a member with a bad primary email
     And I fill in "First name" with "Kyle"
     And I fill in "Last name" with "Korver"

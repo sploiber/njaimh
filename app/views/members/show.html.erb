@@ -28,6 +28,9 @@
 <td>Work phone</td><td><b><%= @member.print_work_phone %></b></td>
 </tr>
 <tr>
+<td>Work extension</td><td><b><%= @member.print_work_extension %></b></td>
+</tr>
+<tr>
 <td>Fax Number</td>
 <td><%= @member.print_fax_number %></td>
 </tr>
@@ -43,13 +46,13 @@
 <td>City</td><td><b><%= @member.print_city %></b></td>
 </tr>
 <tr>
+<td>County</td><td><b><%= @member.print_county %></b></td>
+</tr>
+<tr>
 <td>State</td><td><b><%= @member.print_state %></b></td>
 </tr>
 <tr>
 <td>Zip</td><td><b><%= @member.zip %></b></td>
-</tr>
-<tr>
-<td>Dues</td><td><b><%= @member.print_last_dues_paid %></b></td>
 </tr>
 <tr>
 <td>Memo</td>
@@ -58,11 +61,19 @@
 <td>Board Member?</td><td><b><%= @member.print_board_member %></b></td>
 </tr>
 <tr>
+<td>Exec Board Position</td>
+<td><%= @member.print_exec_board_position %></td>
+</tr>
+<tr>
 <td>Org Member?</td><td><b><%= @member.print_org_member %></b></td>
 </tr>
 <tr>
-<td>Exec Board Position</td>
-<td><%= @member.print_exec_board_position %></td>
+<td>Member Type</td>
+<td><%= @member.print_org_member_type %></td>
+</tr>
+<tr>
+<td>Dues Paid Year</td>
+<td><%= @member.print_dues_paid_year %></td>
 </tr>
 </table>
 <%= admins_only do %>
