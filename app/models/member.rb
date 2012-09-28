@@ -74,6 +74,13 @@ class Member < ActiveRecord::Base
   def print_dues_paid_year
     dues_paid_year =~ /\d/ ? "#{dues_paid_year}" : "-"
   end
+  def print_practice_area
+    if not practice_area_id.nil?
+      return PracticeArea.find(practice_area_id).name
+    else
+      return "-"
+    end
+  end
   def work_phone_may_not_have_alphas
     if work_phone =~ /[a-zA-Z]/
       errors.add(:work_phone, "may not have letters")

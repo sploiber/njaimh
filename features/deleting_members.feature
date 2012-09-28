@@ -8,7 +8,7 @@ Background:
     | email    | password  | admin |
     | admin@njaimh.com  |  password | true |
   And I am signed in as them
-  Given there is a member called "Kyle Korver"
+  Given there is a member "Kyle Korver" with a practice area "Public Health"
   And I am on the homepage
   And I follow "Members"
   When I follow "Kyle Korver"

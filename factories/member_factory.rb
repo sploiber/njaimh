@@ -20,6 +20,6 @@ FactoryGirl.define do
     dues_paid_year '2012'
     org_member_type 'Regular'
     title_credential 'Emperor'
-    practice_area_id '1'
+    practice_area 'Public Health'
   end
 end

@@ -1,6 +1,7 @@
-Given /^there is a member called "([^\"]*)"$/ do |full|
+Given /^there is a member "([^\"]*)" with a practice area "([^\"]*)"$/ do |full, prac_area|
   first_n, last_n  = full.split(" ")
-  @member = FactoryGirl.create(:member, :last_name => last_n, :first_name => first_n)
+  FactoryGirl.create(:practice_area, :name => prac_area) unless PracticeArea.find_by_name(prac_area) != nil
+  @member = FactoryGirl.create(:member, :last_name => last_n, :first_name => first_n, :practice_area_id => PracticeArea.find_by_name(prac_area).id)
 end
 Given /^there is a practice area called "([^\"]*)"$/ do |name|
   FactoryGirl.create(:practice_area, :name => name)
