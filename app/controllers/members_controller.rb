@@ -56,10 +56,10 @@ class MembersController < ApplicationController
     @data = Hash.new
     members = Member.find(:all)
     for m in members
-      key = "#{m.last_name},#{m.first_name},#{m.address_1},#{m.address_2},#{m.city},#{m.state},#{m.zip},#{m.work_phone},#{m.home_phone},#{m.email_1},#{m.email_2}"
+      key = "#{m.last_name},#{m.first_name},#{m.address_1},#{m.address_2},#{m.city},#{m.county},#{m.state},#{m.zip},#{m.work_phone},#{m.work_extension},#{m.fax_number},#{m.home_phone},#{m.email_1},#{m.email_2},#{m.dues_paid_year},#{m.title_credential},#{m.print_org_member},#{m.print_org_member_type},#{m.print_board_member},#{m.print_exec_board_position},#{m.print_practice_area},#{m.print_endorsement_level}"
       @data[key] = m.agency
     end
-    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "State", "Zip", "Work Phone Number","Home Phone","Primary Email Address", "Secondary Email Address", "Agency"]
+    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "County", "State", "Zip", "Work Phone","Extension","Fax Number","Home Phone","Primary Email Address", "Secondary Email Address", "Dues Paid", "Title/Credential", "Member?", "MemberType", "Board?","BoardMemberType","PracticeArea","EndorsementLevel","Agency"]
     printCsv
   end
 private
