@@ -64,7 +64,7 @@ class Member < ActiveRecord::Base
     work_extension =~ /\d/ ? "#{work_extension}" : "-"
   end
   def print_title_credential
-    title_credential =~ /\d/ ? "#{title_credential}" : "-"
+    title_credential =~ /\w/ ? "#{title_credential}" : "-"
   end
   def print_county
     county =~ /\w/ ? "#{county}" : "-"
