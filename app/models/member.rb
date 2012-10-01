@@ -2,7 +2,7 @@ class Member < ActiveRecord::Base
   paginates_per 7
   belongs_to :practice_area
   belongs_to :endorsement_level
-  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :exec_board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id, :endorsement_level_id
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id, :endorsement_level_id
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :city, :presence => true
@@ -48,8 +48,8 @@ class Member < ActiveRecord::Base
   def print_board_member
     board_member ? "Y" : "N"
   end
-  def print_exec_board_position
-    exec_board_position =~ /\w/ ? "#{exec_board_position}" : "-"
+  def print_board_position
+    board_position =~ /\w/ ? "#{board_position}" : "-"
   end
   def print_fax_number
     fax_number =~ /\d/ ? "#{fax_number}" : "-"
