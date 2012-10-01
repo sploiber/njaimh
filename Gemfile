@@ -8,6 +8,7 @@ gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'therubyracer'
 gem 'kaminari'
+gem 'kaminari-bootstrap'
 gem 'prawn'
 
 # Gems used only for assets and not required
