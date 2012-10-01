@@ -3,6 +3,10 @@ Feature: Paginating members
   I want to paginate member results
 
   Background:
+  Given there are the following users:
+      | email    | password  | admin |
+      | admin@njaimh.com  |  password | true |
+  And I am signed in as them
   Given there are 10 members with practice area "Law" and endorsement level "Mentor"
 
   Scenario:

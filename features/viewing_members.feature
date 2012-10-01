@@ -5,6 +5,11 @@ I need there to be a member page
 
   @members
 Scenario: Listing all members
+
+  Given there are the following users:
+    | email    | password  | admin |
+    | admin@njaimh.com  |  password | true |
+  And I am signed in as them
   Given there is a member "Kyle Korver" with a practice area "Public Health" and an endorsement level "Level 3"
   And I am on the homepage
   When I follow "Members"

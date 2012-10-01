@@ -1,6 +1,6 @@
 require 'csv'
 class MembersController < ApplicationController
-  before_filter :authorize_admin!, :except => [:index, :show, :autocom]
+  before_filter :authorize_admin!
   def new
     @member = Member.new
   end
