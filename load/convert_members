@@ -20,7 +20,7 @@ File.open("members.csv") do |a|
           if d[0] =~ /\w/
             if (d[0].eql? "Regular") || (d[0].eql? "Honorary") || (d[0].eql? "Student")
               org_member = true
-              org_member = d[0]
+              org_member_type = d[0]
             else
               # How is it getting here
               # p d[0]
@@ -30,7 +30,7 @@ File.open("members.csv") do |a|
             board_member = true
             board_position = d[1]
           end
-          puts "insert into members (first_name,last_name,agency,address_1,address_2,city,county,state,zip,work_phone,work_extension,fax_number,home_phone,email_1,org_member,org_member_type,board_member,board_position) values (\"#{d[3]}\",\"#{d[2]}\",\"#{d[4]}\",\"#{d[5]}\",\"#{d[6]}\",\"#{d[7]}\",\"#{d[8]}\",\"#{d[9]}\",\"#{d[10]}\",\"#{d[11]}\",\"#{d[12]}\",\"#{d[13]}\",\"#{d[14]}\",\"#{d[15]}\",\"#{org_member}\",\"#{org_member_type}\",\"#{board_member}\",\"#{board_position}\");"
+          puts "insert into members (first_name,last_name,agency,address_1,address_2,city,county,state,zip,work_phone,work_extension,fax_number,home_phone,email_1,org_member,org_member_type,board_member,board_position) values (\"#{d[3]}\",\"#{d[2]}\",\"#{d[4]}\",\"#{d[5]}\",\"#{d[6]}\",\"#{d[7]}\",\"#{d[8]}\",\"#{d[9]}\",\"#{d[10]}\",\"#{d[11]}\",\"#{d[12]}\",\"#{d[13]}\",\"#{d[14]}\",\"#{d[15]}\",#{org_member},\"#{org_member_type}\",#{board_member},\"#{board_position}\");"
         end
       end
     end

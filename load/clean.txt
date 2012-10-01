@@ -1,0 +1,6 @@
+use njaimh_development;
+drop table members;
+drop table schema_migrations;
+drop table endorsement_levels;
+drop table users;
+drop table practice_areas;
