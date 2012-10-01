@@ -10,14 +10,14 @@ Feature: Reporting members
     Given I am on the homepage
     Given there is a member "Kyle Korver" with a practice area "Public Health" and an endorsement level "Level 2"
     Given I am on the homepage
-    When I follow "Members"
+    When I follow "Contacts"
 
   Scenario:
     And I follow "PrintExcelListing"
     And I choose "stuff_select_o_format_csv"
     And I press "Go!"
     Then I should see the table data:
-       |Last Name|First Name|Address_1|Address_2|City|County|State|Zip|Work Phone|Extension|Fax Number|Home Phone|Primary Email Address|Secondary Email Address|Dues Paid|Title/Credential|Member?|MemberType|Board?|BoardMemberType|PracticeArea|EndorsementLevel|Agency|
+       |Last Name|First Name|Address_1|Address_2|City|County|State|Zip|Work Phone|Extension|Fax Number|Home Phone|Primary Email Address|Secondary Email Address|Dues Paid|Title/Credential|Member?|MemberType|Board?|BoardPosition|PracticeArea|EndorsementLevel|Agency|
        |Korver|Kyle|1715 Amwell Road|#1|Somerset|Somerset|NJ|08873|7322490110|115|7322490111|7322460009|kyle@njaimh.org|korver@njaimh.org|2012|Emperor|Y|Regular|N|-|Public Health|Level 2|NJAIMH|
 
   Scenario:

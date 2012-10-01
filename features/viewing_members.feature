@@ -12,6 +12,6 @@ Scenario: Listing all members
   And I am signed in as them
   Given there is a member "Kyle Korver" with a practice area "Public Health" and an endorsement level "Level 3"
   And I am on the homepage
-  When I follow "Members"
+  When I follow "Contacts"
   When I follow "Kyle Korver"
   Then I should be on the member page for "Kyle Korver"

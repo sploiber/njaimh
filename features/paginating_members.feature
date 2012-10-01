@@ -11,5 +11,5 @@ Feature: Paginating members
 
   Scenario:
     Given I am on the homepage
-    And I follow "Members"
+    And I follow "Contacts"
     And I should see 2 pages of pagination

@@ -10,11 +10,11 @@ Background:
   And I am signed in as them
   Given there is a member "Kyle Korver" with a practice area "Public Health" and an endorsement level "Applicant"
   And I am on the homepage
-  And I follow "Members"
+  And I follow "Contacts"
   When I follow "Kyle Korver"
 
   @members
 Scenario: Deleting a member
-  When I follow "Delete Member"
-  Then I should see "Member has been deleted."
+  When I follow "Delete Contact"
+  Then I should see "Contact has been deleted."
   Then I should not see "Kyle Korver"

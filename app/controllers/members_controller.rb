@@ -7,10 +7,10 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(params[:member])
     if @member.save
-      flash[:notice] = "Member has been created."
+      flash[:notice] = "Contact has been created."
       redirect_to @member
     else
-      flash[:notice] = "Member has not been created."
+      flash[:notice] = "Contact has not been created."
       render :action => "new"
     end
   end
@@ -36,30 +36,30 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update_attributes(params[:member])
-      flash[:notice] = "Member has been updated."
+      flash[:notice] = "Contact has been updated."
       redirect_to @member
     else
-      flash[:notice] = "Member has not been updated."
+      flash[:notice] = "Contact has not been updated."
       redirect_to :action => "edit"
     end
   end
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    flash[:notice] = "Member has been deleted."
+    flash[:notice] = "Contact has been deleted."
     redirect_to members_path
   end
   def printExcel
     @o_format = params[:stuff_select]["o_format"]
     @file_name = "njaimh_members"
-    @legend = "All Members Report"
+    @legend = "All Contacts Report"
     @data = Hash.new
     members = Member.find(:all)
     for m in members
       key = "#{m.last_name},#{m.first_name},#{m.address_1},#{m.address_2},#{m.city},#{m.county},#{m.state},#{m.zip},#{m.work_phone},#{m.work_extension},#{m.fax_number},#{m.home_phone},#{m.email_1},#{m.email_2},#{m.dues_paid_year},#{m.title_credential},#{m.print_org_member},#{m.print_org_member_type},#{m.print_board_member},#{m.print_board_position},#{m.print_practice_area},#{m.print_endorsement_level}"
       @data[key] = m.agency
     end
-    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "County", "State", "Zip", "Work Phone","Extension","Fax Number","Home Phone","Primary Email Address", "Secondary Email Address", "Dues Paid", "Title/Credential", "Member?", "MemberType", "Board?","BoardMemberType","PracticeArea","EndorsementLevel","Agency"]
+    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "County", "State", "Zip", "Work Phone","Extension","Fax Number","Home Phone","Primary Email Address", "Secondary Email Address", "Dues Paid", "Title/Credential", "Member?", "MemberType", "Board?","BoardPosition","PracticeArea","EndorsementLevel","Agency"]
     printCsv
   end
 private
