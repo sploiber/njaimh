@@ -10,13 +10,33 @@ File.open("members.csv") do |a|
     b = valid_string.split(13.chr)
     b.each do |c|
       d = c.split(',')
-      if d.size == 7 || d.size == 8 || d.size == 10 || (d.size == 11 && d[10] =~ /\//) 
-        if d[0] !~ /Last Name/ && d[0] != nil
-           puts "insert into members (first_name,last_name,agency,address,city,state,zip,work_phone,home_phone,email) values (\"#{d[1]}\",\"#{d[0]}\",\"#{d[2]}\",\"#{d[3]}\",\"#{d[4]}\",\"#{d[5]}\",\"#{d[6]}\",\"#{d[7]}\",\"#{d[8]}\",\"#{d[9]}\");"
+      org_member = false
+      org_member_type = ""
+      board_member = false
+      board_position = ""
+      if d.size == 16
+        if d[0] !~ /Dues/
+          # Determine whether member
+          if d[0] =~ /\w/
+            if (d[0].eql? "Regular") || (d[0].eql? "Honorary") || (d[0].eql? "Student")
+              org_member = true
+              org_member = d[0]
+            else
+              # How is it getting here
+              # p d[0]
+            end
+          end
+          if d[1] =~ /\w/
+            board_member = true
+            board_position = d[1]
+          end
+          puts "insert into members (first_name,last_name,agency,address_1,address_2,city,county,state,zip,work_phone,work_extension,fax_number,home_phone,email_1,org_member,org_member_type,board_member,board_position) values (\"#{d[3]}\",\"#{d[2]}\",\"#{d[4]}\",\"#{d[5]}\",\"#{d[6]}\",\"#{d[7]}\",\"#{d[8]}\",\"#{d[9]}\",\"#{d[10]}\",\"#{d[11]}\",\"#{d[12]}\",\"#{d[13]}\",\"#{d[14]}\",\"#{d[15]}\",\"#{org_member}\",\"#{org_member_type}\",\"#{board_member}\",\"#{board_position}\");"
         end
-      else
-         #puts d.size
       end
     end
   end
 end
+#    t.string   "dues_paid_year"
+#    t.string   "title_credential"
+#    t.integer  "practice_area_id"
+#    t.integer  "endorsement_level_id"
