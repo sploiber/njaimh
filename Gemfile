@@ -10,6 +10,8 @@ gem 'therubyracer'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'prawn'
+gem 'rack-ssl-enforcer'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
