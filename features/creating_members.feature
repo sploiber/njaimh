@@ -24,6 +24,8 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
+    And I fill in "Home phone" with "(732)420-2322"
+    And I fill in "Work phone" with "(732)420-3412"
     And I press "Finish"
     Then I should see "Contact has been created."
     And I should be on the member page for "Kyle Korver"

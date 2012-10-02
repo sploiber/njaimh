@@ -14,6 +14,8 @@ class Member < ActiveRecord::Base
   validates_length_of :state, :minimum => 2, :maximum => 2
   validates_length_of :zip, :minimum => 5, :maximum => 10
   validate :work_phone_may_not_have_alphas, :home_phone_may_not_have_alphas, :fax_number_may_not_have_alphas, :primary_email_must_have_at_sign, :secondary_email_must_have_at_sign, :work_extension_may_not_have_alphas, :dues_paid_year_may_not_have_alphas
+  validates :home_phone, :phone => true
+  validates :work_phone, :phone => true
   scope :by_last_name, (lambda do |last_name| { :conditions => ['last_name LIKE ?', "%#{last_name}%"]} end)
   def full
     "#{first_name} #{last_name}"
