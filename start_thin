@@ -1,0 +1,1 @@
+thin start --ssl --ssl-verify --ssl-key-file ssllocal/ca.key --ssl-cert-file ssllocal/ca.crt -p 3100 -d
