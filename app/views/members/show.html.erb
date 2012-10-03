@@ -21,26 +21,24 @@
 <td><b><%= @member.print_email_2 %></b></td>
 </tr>
 <tr>
+<td>Work phone</td><td><b><%= @member.print_work_phone %></b></td>
+<td>Work extension</td><td><b><%= @member.print_work_extension %></b></td>
+</tr>
+<tr>
 <td>Home phone</td>
 <td><b><%= @member.print_home_phone %></b></td>
 </tr>
 <tr>
-<td>Work phone</td><td><b><%= @member.print_work_phone %></b></td>
-</tr>
-<tr>
-<td>Work extension</td><td><b><%= @member.print_work_extension %></b></td>
-</tr>
-<tr>
 <td>Fax Number</td>
-<td><%= @member.print_fax_number %></td>
+<td><b><%= @member.print_fax_number %></b></td>
 </tr>
 <tr>
 <td>Address</td>
-<td><b><%= @member.print_address_1 %><b></td>
+<td><b><%= @member.print_address_1 %></b></td>
 </tr>
 <tr>
 <td>Address</td>
-<td><b><%= @member.print_address_2 %><b></td>
+<td><b><%= @member.print_address_2 %></b></td>
 </tr>
 <tr>
 <td>City</td><td><b><%= @member.print_city %></b></td>
@@ -55,42 +53,45 @@
 <td>Zip</td><td><b><%= @member.zip %></b></td>
 </tr>
 <tr>
-<td>Memo</td>
-<td><%= @member.print_memo %></td>
-</tr>
-<td>Board Member?</td><td><b><%= @member.print_board_member %></b></td>
-</tr>
-<tr>
-<td>Board Position</td>
-<td><%= @member.print_board_position %></td>
-</tr>
-<tr>
 <td>Org Member?</td><td><b><%= @member.print_org_member %></b></td>
 </tr>
 <tr>
 <td>Member Type</td>
-<td><%= @member.print_org_member_type %></td>
+<td><b><%= @member.print_org_member_type %></b></td>
+</tr>
+<tr>
+<td>Board Member?</td><td><b><%= @member.print_board_member %></b></td>
+</tr>
+<tr>
+<td>Board Position</td>
+<td><b><%= @member.print_board_position %></b></td>
 </tr>
 <tr>
 <td>Dues Paid Year</td>
-<td><%= @member.print_dues_paid_year %></td>
+<td><b><%= @member.print_dues_paid_year %></b></td>
 </tr>
 <tr>
 <td>Title/Credential</td>
-<td><%= @member.print_title_credential %></td>
+<td><b><%= @member.print_title_credential %></b></td>
 </tr>
 <tr>
 <td>Practice Area</td>
-<td><%= @member.print_practice_area %></td>
+<td><b><%= @member.print_practice_area %></b></td>
 </tr>
 <tr>
 <td>Endorsement level</td>
-<td><%= @member.print_endorsement_level %></td>
+<td><b><%= @member.print_endorsement_level %></b></td>
+</tr>
+<tr>
+<td>Memo</td>
+<td><b><%= @member.print_memo %></b></td>
 </tr>
 </table>
 <%= admins_only do %>
 <%= link_to "Edit Contact", edit_member_path(@member), :class => "btn btn-primary btn-large" %>
+<% end %>
+<%= link_to "Return to all contacts", members_path, :class => "btn btn-primary btn-large" %>
+<%= admins_only do %>
 <%= link_to "Delete Contact", @member, :method => :delete,
   :confirm => "Are you sure you want to delete this contact?", :class => "btn btn-primary btn-large" %>
 <% end %>
-<%= link_to "Return to all contacts", members_path, :class => "btn btn-primary btn-large" %>

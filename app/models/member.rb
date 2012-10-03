@@ -5,14 +5,8 @@ class Member < ActiveRecord::Base
   attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id, :endorsement_level_id
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  validates :city, :presence => true
-  validates :state, :presence => true
-  validates :zip, :presence => true
   validates_length_of :first_name, :maximum => 16
   validates_length_of :last_name, :maximum => 20
-  validates_length_of :city, :minimum => 3, :maximum => 20
-  validates_length_of :state, :minimum => 2, :maximum => 2
-  validates_length_of :zip, :minimum => 5, :maximum => 10
   validate :work_phone_may_not_have_alphas, :home_phone_may_not_have_alphas, :fax_number_may_not_have_alphas, :primary_email_must_have_at_sign, :secondary_email_must_have_at_sign, :work_extension_may_not_have_alphas, :dues_paid_year_may_not_have_alphas
   validates :home_phone, :phone => true
   validates :work_phone, :phone => true
