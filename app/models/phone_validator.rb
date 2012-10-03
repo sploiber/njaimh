@@ -4,6 +4,6 @@ class PhoneValidator < ActiveModel::EachValidator
     record.errors[attribute] << (
       options[:message] || "is not a valid phone number"
     ) unless
-      (value == "") || (value =~ /\(\d{3}\)\s+\d{3}\-\d{4}/i)
+      (value == "") || (value =~ /\(\d{3}\)\s*\d{3}\-\d{4}/i)
   end
 end
