@@ -1,4 +1,4 @@
-<%= admins_only do %>
+<% if user_signed_in? %>
 <%= link_to "New Contact", new_member_path, :class => "btn btn-primary btn-large" %>
 <% end %>
 <h2>Contacts</h2>
@@ -15,6 +15,6 @@
 <%= render :partial => "members_list" %>
 <% end %>
 </div>
-<%= admins_only do %>
+<% if user_signed_in? %>
 <%= link_to "PrintExcelListing", :action => "getExcel", :controller => "members", :class => "btn btn-primary btn-large" %>
 <% end %>
