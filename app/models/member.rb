@@ -64,6 +64,14 @@ class Member < ActiveRecord::Base
   def print_title_credential
     title_credential =~ /\w/ ? "#{title_credential}" : "-"
   end
+  def print_title_credential_csv
+    if title_credential =~ /\w/
+      title_credential.gsub!(/,/, ';')
+      "#{title_credential}"
+    else
+      "-"
+    end
+  end
   def print_county
     county =~ /\w/ ? "#{county}" : "-"
   end
