@@ -21,15 +21,15 @@
 <td><b><%= @member.print_email_2 %></b></td>
 </tr>
 <tr>
-<td>Work phone</td><td><b><%= @member.print_work_phone %></b></td>
-<td>Work extension</td><td><b><%= @member.print_work_extension %></b></td>
+<td>Work Phone</td><td><b><%= @member.print_work_phone %></b></td>
+<td>Work Extension</td><td><b><%= @member.print_work_extension %></b></td>
 </tr>
 <tr>
 <td>Fax Number</td>
 <td><b><%= @member.print_fax_number %></b></td>
 </tr>
 <tr>
-<td>Home phone</td>
+<td>Home Phone</td>
 <td><b><%= @member.print_home_phone %></b></td>
 </tr>
 <tr>
@@ -75,7 +75,7 @@
 <td><b><%= @member.print_practice_area %></b></td>
 </tr>
 <tr>
-<td>Endorsement level</td>
+<td>Endorsement Level</td>
 <td><b><%= @member.print_endorsement_level %></b></td>
 </tr>
 <tr>
@@ -86,7 +86,7 @@
 <%= admins_only do %>
 <%= link_to "Edit Contact", edit_member_path(@member), :class => "btn btn-primary btn-large" %>
 <% end %>
-<%= link_to "Return to all contacts", members_path, :class => "btn btn-primary btn-large" %>
+<%= link_to "Return to All Contacts", members_path, :class => "btn btn-primary btn-large" %>
 <%= admins_only do %>
 <%= link_to "Delete Contact", @member, :method => :delete,
   :confirm => "Are you sure you want to delete this contact?", :class => "btn btn-primary btn-large" %>
