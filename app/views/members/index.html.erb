@@ -8,8 +8,12 @@
 <%= submit_tag "Go!", :name => nil %>
 <% end %>
 <div id="members">
+<% if @members.size == 0 %>
+<h2>Search produced 0 results</h2>
+<% else %>
 <%= paginate @members %>
 <%= render :partial => "members_list" %>
+<% end %>
 </div>
 <%= admins_only do %>
 <%= link_to "PrintExcelListing", :action => "getExcel", :controller => "members", :class => "btn btn-primary btn-large" %>
