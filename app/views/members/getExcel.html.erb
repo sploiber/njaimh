@@ -5,6 +5,10 @@
 <%= f.radio_button :o_format, :CSV, :checked => true %>CSV<BR>
 <%= f.radio_button :o_format, :PDF %>PDF<BR>
 </div>
+<%= f.check_box :members_only %>Members Only
+<br>
+<%= f.check_box :board_only %>Board Only
+<br>
 <%= submit_tag "Go!" %>
 </div>
 <% end %>

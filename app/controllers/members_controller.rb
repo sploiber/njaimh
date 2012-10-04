@@ -51,10 +51,14 @@ class MembersController < ApplicationController
   end
   def printExcel
     @o_format = params[:stuff_select]["o_format"]
+    @members_only = params[:stuff_select]["members_only"].to_i
+    @board_only = params[:stuff_select]["board_only"].to_i
     @file_name = "njaimh_members"
     @legend = "All Contacts Report"
     @data = Hash.new
     members = Member.find(:all)
+    members = Member.members_only if @members_only == 1
+    members = Member.board_only if @board_only == 1
     for m in members
       key = "#{m.last_name},#{m.first_name},#{m.address_1},#{m.address_2},#{m.city},#{m.county},#{m.state},#{m.zip},#{m.work_phone},#{m.work_extension},#{m.fax_number},#{m.home_phone},#{m.email_1},#{m.email_2},#{m.dues_paid_year},#{m.title_credential},#{m.print_org_member},#{m.print_org_member_type},#{m.print_board_member},#{m.print_board_position},#{m.print_practice_area},#{m.print_endorsement_level}"
       @data[key] = m.agency
