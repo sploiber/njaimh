@@ -2,32 +2,32 @@
 <%= f.error_messages %>
 <table>
 <tr>
-<td><%= f.label :first_name %></td>
+<td><%= f.label :first_name, "First Name" %></td>
 <td><%= f.text_field :first_name %></td>
-<td><%= f.label :last_name %></td>
+<td><%= f.label :last_name, "Last Name" %></td>
 <td><%= f.text_field :last_name %></td>
 </tr>
 <tr>
 <td><%= f.label :agency %></td>
 <td><%= f.text_field :agency %></td>
-<td><%= f.label :fax_number %></td>
+<td><%= f.label :fax_number, "Fax Number" %></td>
 <td><%= f.text_field :fax_number %></td>
 </tr>
 <tr>
-<td><%= f.label :primary_email %></td>
+<td><%= f.label :primary_email, "Primary Email" %></td>
 <td><%= f.text_field :email_1 %></td>
-<td><%= f.label :secondary_email %></td>
+<td><%= f.label :secondary_email, "Secondary Email" %></td>
 <td><%= f.text_field :email_2 %></td>
 </tr>
 <tr>
-<td><%= f.label :home_phone %></td>
-<td><%= f.text_field :home_phone %></td>
-<td><%= f.label :work_extension %></td>
+<td><%= f.label :work_phone, "Work Phone" %></td>
+<td><%= f.text_field :work_phone %></td>
+<td><%= f.label :work_extension, "Work Extension" %></td>
 <td><%= f.text_field :work_extension %></td>
 </tr>
 <tr>
-<td><%= f.label :work_phone %></td>
-<td><%= f.text_field :work_phone %></td>
+<td><%= f.label :home_phone, "Home Phone" %></td>
+<td><%= f.text_field :home_phone %></td>
 </tr>
 <tr>
 <td><%= f.label :address_1 %></td>
@@ -48,7 +48,7 @@
 <td><%= f.text_field :zip %></td>
 </tr>
 <tr>
-<td><%= f.label :org_member %></td>
+<td><%= f.label :org_member, "Org Member" %></td>
 <% if @member.org_member %>
 <td><%= f.radio_button :org_member, :true, :checked => true  %>Yes</td>
 <td><%= f.radio_button :org_member, :false %>No</td>
@@ -58,13 +58,13 @@
 <% end %>
 </tr>
 <tr>
-<td><%= f.label :org_member_type %></td>
+<td><%= f.label :org_member_type, "Org Member Type" %></td>
 <td><%= f.text_field :org_member_type %></td>
-<td><%= f.label :dues_paid_year %></td>
+<td><%= f.label :dues_paid_year, "Dues Paid Year" %></td>
 <td><%= f.text_field :dues_paid_year %></td>
 </tr>
 <tr>
-<td><%= f.label :board_member %></td>
+<td><%= f.label :board_member, "Board Member" %></td>
 <% if @member.board_member %>
 <td><%= f.radio_button :board_member, :true, :checked => true  %>Yes</td>
 <td><%= f.radio_button :board_member, :false %>No</td>
@@ -74,11 +74,11 @@
 <% end %>
 </tr>
 <tr>
-<td><%= f.label :board_position %></td>
+<td><%= f.label :board_position, "Board Position" %></td>
 <td><%= f.text_field :board_position, :size => 60 %></td>
 </tr>
 <tr>
-<td><%= f.label :title_credential %></td>
+<td><%= f.label :title_credential, "Title/Credential" %></td>
 <td><%= f.text_field :title_credential, :size => 60 %></td>
 </tr>
 <tr>
@@ -86,9 +86,9 @@
 <td><%= f.text_field :memo, :size => 60 %></td>
 </tr>
 <tr>
-<td><%= f.label :practice_area %><br /></td>
+<td><%= f.label :practice_area, "Practice Area" %><br /></td>
 <td><%= f.collection_select(:practice_area_id, PracticeArea.find(:all, :order => :name), :id, :name, { :prompt => "-- Select --" }) %></td>
-<td><%= f.label :endorsement_level %><br /></td>
+<td><%= f.label :endorsement_level, "Endorsement Level" %><br /></td>
 <td><%= f.collection_select(:endorsement_level_id, EndorsementLevel.find(:all, :order => :name), :id, :name, { :prompt => "-- Select --" }) %></td>
 </tr>
 

@@ -18,14 +18,14 @@ Feature: Creating members
   Scenario: Creating a member
     And I select "Public Health" from "member[practice_area_id]"
     And I select "Applicant" from "member[endorsement_level_id]"
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I fill in "Home phone" with "(732)420-2322"
-    And I fill in "Work phone" with "(732)420-3412"
+    And I fill in "Home Phone" with "(732)420-2322"
+    And I fill in "Work Phone" with "(732)420-3412"
     And I press "Finish"
     Then I should see "Contact has been created."
     And I should be on the member page for "Kyle Korver"
@@ -34,7 +34,7 @@ Feature: Creating members
 
   @members
   Scenario: Creating a member without a first name
-    And I fill in "Last name" with "Korver"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
@@ -45,7 +45,7 @@ Feature: Creating members
 
   @members
   Scenario: Creating a member without a last name
-    And I fill in "First name" with "Kyle"
+    And I fill in "First Name" with "Kyle"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
@@ -56,8 +56,8 @@ Feature: Creating members
 
   @members
   Scenario: Creating a member with a long first name
-    And I fill in "First name" with "012345678901234567"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "012345678901234567"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
@@ -68,8 +68,8 @@ Feature: Creating members
 
   @members
   Scenario: Creating a member with a long last name
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "0123456789012345678901"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "0123456789012345678901"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
@@ -80,73 +80,73 @@ Feature: Creating members
 
   @members
   Scenario: Creating a member with a bad work phone
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
-    And I fill in "Work phone" with "yes"
+    And I fill in "Work Phone" with "yes"
     And I press "Finish"
     Then I should see "Contact has not been created."
     And I should see "Work phone may not have letters"
 
   @members
   Scenario: Creating a member with a bad home phone
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
-    And I fill in "Home phone" with "yes"
+    And I fill in "Home Phone" with "yes"
     And I press "Finish"
     Then I should see "Contact has not been created."
     And I should see "Home phone may not have letters"
 
   @members
   Scenario: Creating a member with a bad fax number
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
-    And I fill in "Fax number" with "yes"
+    And I fill in "Fax Number" with "yes"
     And I press "Finish"
     Then I should see "Contact has not been created."
     And I should see "Fax number may not have letters"
 
   @members
   Scenario: Creating a member with a bad work extension
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
-    And I fill in "Work extension" with "yes"
+    And I fill in "Work Extension" with "yes"
     And I press "Finish"
     Then I should see "Contact has not been created."
     And I should see "Work extension may not have letters"
 
   @members
   Scenario: Creating a member with a bad dues paid year
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
-    And I fill in "Dues paid year" with "yes"
+    And I fill in "Dues Paid Year" with "yes"
     And I press "Finish"
     Then I should see "Contact has not been created."
     And I should see "Dues paid year may not have letters"
 
   @members
   Scenario: Creating a member with a bad primary email
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
@@ -158,8 +158,8 @@ Feature: Creating members
 
   @members
   Scenario: Creating a member with a bad secondary email
-    And I fill in "First name" with "Kyle"
-    And I fill in "Last name" with "Korver"
+    And I fill in "First Name" with "Kyle"
+    And I fill in "Last Name" with "Korver"
     And I fill in "Address" with "1715 Amwell Road"
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"

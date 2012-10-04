@@ -16,7 +16,7 @@ Feature: Editing members
   
   @members
   Scenario: Updating a member's first name
-    When I fill in "First name" with "Bruce"
+    When I fill in "First Name" with "Bruce"
     And I press "Finish"
     Then I should see "Contact has been updated."
     Then I should be on the member page for "Bruce Korver"
@@ -24,7 +24,7 @@ Feature: Editing members
     And I should not see "Kyle Korver"
 
   Scenario: Updating a member's last name
-    When I fill in "Last name" with "Chan"
+    When I fill in "Last Name" with "Chan"
     And I press "Finish"
     Then I should see "Contact has been updated."
     Then I should be on the member page for "Kyle Chan"
