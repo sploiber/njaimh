@@ -87,9 +87,9 @@
 </tr>
 <tr>
 <td><%= f.label :practice_area %><br /></td>
-<td><%= f.collection_select(:practice_area_id, PracticeArea.find(:all, :order => :name), :id, :name) %></td>
+<td><%= f.collection_select(:practice_area_id, PracticeArea.find(:all, :order => :name), :id, :name, { :prompt => "- Select practice area --" }) %></td>
 <td><%= f.label :endorsement_level %><br /></td>
-<td><%= f.collection_select(:endorsement_level_id, EndorsementLevel.find(:all, :order => :name), :id, :name) %></td>
+<td><%= f.collection_select(:endorsement_level_id, EndorsementLevel.find(:all, :order => :name), :id, :name, { :prompt => "- Select endorsement level --" }) %></td>
 </tr>
 
 </table>
