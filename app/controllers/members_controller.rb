@@ -3,6 +3,7 @@ class MembersController < ApplicationController
   before_filter :authorize_admin!
   def new
     @member = Member.new
+    @submit_label = "Create"
   end
   def create
     @member = Member.new(params[:member])
@@ -34,6 +35,7 @@ class MembersController < ApplicationController
   end
   def edit
     @member = Member.find(params[:id])
+    @submit_label = "Update"
   end
   def update
     @member = Member.find(params[:id])

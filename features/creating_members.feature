@@ -26,7 +26,7 @@ Feature: Creating members
     And I fill in "Zip" with "08873"
     And I fill in "Home Phone" with "(732)420-2322"
     And I fill in "Work Phone" with "(732)420-3412"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has been created."
     And I should be on the member page for "Kyle Korver"
     And I should see "First Name Kyle"
@@ -39,7 +39,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "First name can't be blank"
 
@@ -50,7 +50,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Last name can't be blank"
 
@@ -62,7 +62,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "First name is too long"
 
@@ -74,7 +74,7 @@ Feature: Creating members
     And I fill in "City" with "Somerset"
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "08873"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Last name is too long"
 
@@ -87,7 +87,7 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "Work Phone" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Work phone may not have letters"
 
@@ -100,7 +100,7 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "Home Phone" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Home phone may not have letters"
 
@@ -113,7 +113,7 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "Fax Number" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Fax number may not have letters"
 
@@ -126,7 +126,7 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "Work Extension" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Work extension may not have letters"
 
@@ -139,7 +139,7 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "Dues Paid Year" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Dues paid year may not have letters"
 
@@ -152,7 +152,7 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "member_email_1" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Primary email must have @ sign"
 
@@ -165,6 +165,6 @@ Feature: Creating members
     And I fill in "State" with "NJ"
     And I fill in "Zip" with "012345678901"
     And I fill in "member_email_2" with "yes"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Contact has not been created."
     And I should see "Secondary email must have @ sign"
