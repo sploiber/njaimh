@@ -13,6 +13,8 @@ class Member < ActiveRecord::Base
   scope :by_last_name, (lambda do |last_name| { :conditions => ['last_name LIKE ?', "%#{last_name}%"]} end)
   scope :members_only, where(:org_member => true)
   scope :board_only, where(:board_member => true)
+  scope :sort_last_name, order(:last_name)
+  scope :by_agency, (lambda do |agency| { :conditions => ['agency LIKE ?', "%#{agency}%"]} end)
   def full
     "#{first_name} #{last_name}"
   end

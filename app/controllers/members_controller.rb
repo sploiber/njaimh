@@ -15,9 +15,11 @@ class MembersController < ApplicationController
     end
   end
   def index
-    @members = Member.order("last_name").page(params[:page])
+    l = params[:agency_clue]
+    @members = Member.sort_last_name.by_agency(l).page(params[:page])
+   
     if not params[:member_last_name].nil?
-      @members = Member.order("last_name").by_last_name(params[:member_last_name]).page(params[:page])
+      @members = Member.sort_last_name.by_agency(l).by_last_name(params[:member_last_name]).page(params[:page])
     end
     #@members = Member.search params[:search], :order => :last_name, :page => params[:page], :per_page => 10
     #@last_names = Member.all.map(&:last_name)
