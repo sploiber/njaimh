@@ -20,7 +20,7 @@ Feature: Creating endorsement levels
   @basic
   Scenario: Creating a endorsement level
     And I fill in "Name" with "Applicant"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Endorsement Level has been created."
     And I should be on the endorsement level page for "Applicant"
     And I should see "Applicant"
@@ -28,25 +28,25 @@ Feature: Creating endorsement levels
   @basic
   Scenario: Creating a endorsement level a second time should fail
     And I fill in "Name" with "Applicant"
-    And I press "Finish"
+    And I press "Create"
     Then I should see "Endorsement Level has been created."
     And I should be on the endorsement level page for "Applicant"
     And I follow "Return to All Endorsement Levels"
     And I follow "New Endorsement Level"
     And I fill in "Name" with "Applicant"
-    And I press "Finish"
+    And I press "Create"
     And I should see "Endorsement Level has not been created."
     And I should see "Name has already been taken"
 
   @basic
   Scenario: Creating a endorsement level without a name should fail
-    And I press "Finish"
+    And I press "Create"
     And I should see "Endorsement Level has not been created."
     And I should see "Name can't be blank"
 
   @basic
   Scenario: Creating a endorsement level with a long name should fail
     And I fill in "Name" with "123456789012345678901"
-    And I press "Finish"
+    And I press "Create"
     And I should see "Endorsement Level has not been created."
     And I should see "Name is too long"

@@ -5,6 +5,7 @@ class PracticeAreasController < ApplicationController
   end
   def new
     @practice_area = PracticeArea.new
+    @submit_label = "Create"
   end
   def create
     @practice_area = PracticeArea.new(params[:practice_area])
@@ -21,6 +22,7 @@ class PracticeAreasController < ApplicationController
   end
   def edit
     @practice_area = PracticeArea.find(params[:id])
+    @submit_label = "Update"
   end
   def update
     @practice_area = PracticeArea.find(params[:id])

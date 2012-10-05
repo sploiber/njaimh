@@ -5,6 +5,7 @@ class EndorsementLevelsController < ApplicationController
   end
   def new
     @endorsement_level = EndorsementLevel.new
+    @submit_label = "Create"
   end
   def create
     @endorsement_level = EndorsementLevel.new(params[:endorsement_level])
@@ -21,6 +22,7 @@ class EndorsementLevelsController < ApplicationController
   end
   def edit
     @endorsement_level = EndorsementLevel.find(params[:id])
+    @submit_label = "Update"
   end
   def update
     @endorsement_level = EndorsementLevel.find(params[:id])

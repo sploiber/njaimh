@@ -18,12 +18,12 @@ Feature: Editing Practice Areas
   @basic
   Scenario: Updating a practice area
     And I fill in "Name" with "6 beta"
-    And I press "Finish"
+    And I press "Update"
     Then I should see "Practice Area has been updated."
     Then I should be on the practice area page for "6 beta"
 
   @basic
   Scenario: Updating a practice area with invalid attributes is bad
     And I fill in "Name" with ""
-    And I press "Finish"
+    And I press "Update"
     Then I should see "Practice Area has not been updated."

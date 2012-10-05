@@ -18,12 +18,12 @@ Feature: Editing Endorsement Levels
   @basic
   Scenario: Updating a endorsement level
     And I fill in "Name" with "6 beta"
-    And I press "Finish"
+    And I press "Update"
     Then I should see "Endorsement Level has been updated."
     Then I should be on the endorsement level page for "6 beta"
 
   @basic
   Scenario: Updating a endorsement level with invalid attributes is bad
     And I fill in "Name" with ""
-    And I press "Finish"
+    And I press "Update"
     Then I should see "Endorsement Level has not been updated."
