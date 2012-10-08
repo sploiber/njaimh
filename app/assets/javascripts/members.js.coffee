@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $('.member').bind 'mouseenter', (event) =>
+    member = event.target
+    $('#tip').html text_summary_for(member)
+    $('#tip').show()
+    $('.member').bind 'mouseleave', (event) =>
+      $('#tip').hide()
+text_summary_for = (member) =>
+  member.dataset['agency'] + " of " + member.dataset['county'] + " county"

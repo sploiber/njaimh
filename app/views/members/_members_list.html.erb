@@ -1,5 +1,7 @@
 <ul id='members'>
 <% @members.each do |member| %>
-<li><%= link_to member.full, member %></li>
+<%= content_tag_for(:li, member, :data => { :agency => member.agency, :county => member.county }) do %>
+  <%= link_to member.full, member %>
+<% end %>
 <% end %>
 </ul>
