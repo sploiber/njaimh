@@ -19,6 +19,8 @@ Njaimh::Application.routes.draw do
   resources :members do
     get 'getExcel', :on => :collection
     post 'printExcel', :on => :collection
+    get 'composeEmail', :on => :collection
+    post 'sendEmail', :on => :collection
   end
 
   # Sample resource route with options:

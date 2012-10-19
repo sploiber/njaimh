@@ -53,6 +53,20 @@ class MembersController < ApplicationController
     flash[:notice] = "Contact has been deleted."
     redirect_to members_path
   end
+  def sendEmail
+    @email_text = params[:email_setup]["email_text"]
+    @subject = params[:email_setup]["subject"]
+    everyone = params[:email_setup]["everyone"].to_i
+    members_only = params[:email_setup]["members_only"].to_i
+    board_only = params[:email_setup]["board_only"].to_i
+
+    @recipients = "joelgottlieb@yahoo.com"
+    @email_text = Member.find(:all).map(&:email_1).compact if everyone == 1
+    @email_text = Member.members_only.map(&:email_1).compact if members_only == 1
+    @email_text = Member.board_only.map(&:email_1).compact if board_only == 1
+    NJAIMHMailer.send_email(@email_text,@subject,@recipients).deliver
+    redirect_to :action => "index"
+  end
   def printExcel
     @o_format = params[:stuff_select]["o_format"]
     @members_only = params[:stuff_select]["members_only"].to_i
