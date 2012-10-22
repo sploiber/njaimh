@@ -56,15 +56,24 @@ class MembersController < ApplicationController
   def sendEmail
     @email_text = params[:email_setup]["email_text"]
     @subject = params[:email_setup]["subject"]
+    # This object will have attributes specifying the attachment.
+    uploaded_io = params[:email_setup]["file_attachment"]
+    uploaded_data = ""
+    uploaded_filename = ""
+    if uploaded_io != nil
+      # Get the data itself, and the filename
+      uploaded_data = uploaded_io.read
+      uploaded_filename = uploaded_io.original_filename
+    end
     everyone = params[:email_setup]["everyone"].to_i
     members_only = params[:email_setup]["members_only"].to_i
     board_only = params[:email_setup]["board_only"].to_i
 
-    @recipients = "joelgottlieb@yahoo.com"
+    @recipients = "joel.gottlieb@gmail.com"
     @email_text = Member.find(:all).map(&:email_1).compact if everyone == 1
     @email_text = Member.members_only.map(&:email_1).compact if members_only == 1
     @email_text = Member.board_only.map(&:email_1).compact if board_only == 1
-    NJAIMHMailer.send_email(@email_text,@subject,@recipients).deliver
+    NJAIMHMailer.send_email(@email_text,@subject,@recipients,uploaded_filename,uploaded_data).deliver
     redirect_to :action => "index"
   end
   def printExcel
