@@ -81,7 +81,7 @@ class MembersController < ApplicationController
       key = "#{m.last_name},#{m.first_name},#{m.address_1},#{m.address_2},#{m.city},#{m.county},#{m.state},#{m.zip},#{m.work_phone},#{m.work_extension},#{m.fax_number},#{m.home_phone},#{m.email_1},#{m.email_2},#{m.dues_paid_year},#{m.print_title_credential_csv},#{m.print_org_member},#{m.print_org_member_type},#{m.print_board_member},#{m.print_board_position},#{m.print_practice_area},#{m.print_endorsement_level}"
       @data[key] = m.agency
     end
-    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "County", "State", "Zip", "Work Phone","Extension","Fax Number","Home Phone","Primary Email Address", "Secondary Email Address", "Dues Paid", "Title/Credential", "Member?", "MemberType", "Board?","BoardPosition","PracticeArea","EndorsementLevel","Agency"]
+    @csv_header = ["Last Name", "First Name", "Address_1", "Address_2", "City", "County", "State", "Zip", "Work Phone","Extension","Fax Number","Home/Cell Phone","Primary Email Address", "Secondary Email Address", "Dues Paid", "Title/Credential", "Member?", "MemberType", "Board?","BoardPosition","PracticeArea","EndorsementLevel","Agency"]
     printCsv
   end
 private
