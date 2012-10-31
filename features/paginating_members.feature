@@ -7,7 +7,7 @@ Feature: Paginating members
       | email    | password  | admin |
       | admin@njaimh.com  |  password | true |
   And I am signed in as them
-  Given there are 20 members with practice area "Law" and endorsement level "Mentor"
+  Given there are 20 members with practice area "Law" and secondary practice area "Psychiatric" and endorsement level "Mentor"
 
   Scenario:
     Given I am on the homepage

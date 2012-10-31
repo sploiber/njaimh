@@ -2,7 +2,7 @@ class Member < ActiveRecord::Base
   paginates_per 12
   belongs_to :practice_area
   belongs_to :endorsement_level
-  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id, :endorsement_level_id
+  attr_accessible :address_1, :address_2, :agency, :board_member, :city, :email_1, :email_2, :first_name, :home_phone, :last_name, :state, :work_phone, :zip, :memo, :board_position, :fax_number, :org_member, :county, :dues_paid_year, :org_member_type, :work_extension, :title_credential, :practice_area_id, :secondary_practice_area_id, :endorsement_level_id
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates_length_of :first_name, :maximum => 16
@@ -86,6 +86,13 @@ class Member < ActiveRecord::Base
   def print_practice_area
     if not practice_area_id.nil?
       return PracticeArea.find(practice_area_id).name
+    else
+      return "-"
+    end
+  end
+  def print_secondary_practice_area
+    if not secondary_practice_area_id.nil?
+      return PracticeArea.find(secondary_practice_area_id).name
     else
       return "-"
     end

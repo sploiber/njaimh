@@ -91,6 +91,10 @@
 <td><%= f.label :endorsement_level, "Endorsement Level" %><br /></td>
 <td><%= f.collection_select(:endorsement_level_id, EndorsementLevel.find(:all, :order => :name), :id, :name, { :prompt => "-- Select --" }) %></td>
 </tr>
+<tr>
+<td><%= f.label :secondary_practice_area, "Secondary Practice Area" %><br /></td>
+<td><%= f.collection_select(:secondary_practice_area_id, PracticeArea.find(:all, :order => :name), :id, :name, { :prompt => "-- Select --" }) %></td>
+</tr>
 
 </table>
 <%= f.submit @submit_label, :class => 'btn btn-primary btn-large' %>

@@ -10,6 +10,7 @@ Feature: Creating members
     And I am signed in as them
     Given I am on the homepage
     Given there is a practice area called "Public Health"
+    Given there is a practice area called "Psychiatric"
     Given there is an endorsement level called "Applicant"
     When I follow "Contacts"
     When I follow "New Contact"
@@ -17,6 +18,7 @@ Feature: Creating members
   @members
   Scenario: Creating a member
     And I select "Public Health" from "member[practice_area_id]"
+    And I select "Psychiatric" from "member[secondary_practice_area_id]"
     And I select "Applicant" from "member[endorsement_level_id]"
     And I fill in "First Name" with "Kyle"
     And I fill in "Last Name" with "Korver"
