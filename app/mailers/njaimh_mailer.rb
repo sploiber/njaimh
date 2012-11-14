@@ -4,10 +4,11 @@ class NJAIMHMailer < ActionMailer::Base
   def send_email(txt,subject,recipients,attached_file_name,attached_file_data)
     @msg_txt = txt
     @subject = subject
-    @recipients = recipients
+    @bcc = recipients
+    @recipients = "dristaino@nj-aimh.org"
     @attached_file_name = attached_file_name
     # Attach only if we have something
     attachments[@attached_file_name] = attached_file_data if @attached_file_name != nil
-    mail(:to => @recipients, :subject => @subject)
+    mail(:to => @recipients, :bcc => @bcc, :subject => @subject)
   end
 end

@@ -70,9 +70,9 @@ class MembersController < ApplicationController
     board_only = params[:email_setup]["board_only"].to_i
 
     @recipients = "joel.gottlieb@gmail.com"
-    @email_text = Member.find(:all).map(&:email_1).compact if everyone == 1
-    @email_text = Member.members_only.map(&:email_1).compact if members_only == 1
-    @email_text = Member.board_only.map(&:email_1).compact if board_only == 1
+    @recipients = Member.emailers.map(&:email_1) if everyone == 1
+    @recipients = Member.members_only.map(&:email_1).compact if members_only == 1
+    @recipients = Member.board_only.map(&:email_1).compact if board_only == 1
     NJAIMHMailer.send_email(@email_text,@subject,@recipients,uploaded_filename,uploaded_data).deliver
     redirect_to :action => "index"
   end
