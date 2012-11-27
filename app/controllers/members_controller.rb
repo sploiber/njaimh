@@ -55,7 +55,8 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
   def sendEmail
-    @email_text = params[:email_setup]["email_text"]
+    # be sure to render the HTML properly
+    @email_text = params[:email_setup]["email_text"].gsub(/\n/, '<br/>').html_safe
     @subject = params[:email_setup]["subject"]
     # This object will have attributes specifying the attachment.
     uploaded_io = params[:email_setup]["file_attachment"]
