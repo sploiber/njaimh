@@ -5,6 +5,8 @@
 <%= form_tag members_path, :method => :get do %>
 <%= label_tag "Search by Last Name" %>
 <%= text_field_tag :member_last_name, nil, :class => 'member_last_name' %>
+<%= label_tag "First Name Clue:" %>
+<%= text_field_tag :first_name_clue, nil, :class => 'first_name_clue' %>
 <%= label_tag "Agency Clue:" %>
 <%= text_field_tag :agency_clue, nil, :class => 'agency_clue' %>
 <%= submit_tag "Go!", :name => nil %>
