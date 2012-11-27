@@ -12,7 +12,6 @@ gem 'kaminari-bootstrap'
 gem 'prawn'
 gem 'rack-ssl-enforcer'
 gem 'thin'
-gem 'paperclip', '~> 3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
