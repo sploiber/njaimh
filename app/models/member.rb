@@ -16,6 +16,7 @@ class Member < ActiveRecord::Base
   scope :emailers, where("email_1 <> ''")
   scope :sort_last_name, order(:last_name)
   scope :by_agency, (lambda do |agency| { :conditions => ['agency LIKE ?', "%#{agency}%"]} end)
+  scope :by_first_name, (lambda do |first_name| { :conditions => ['first_name LIKE ?', "%#{first_name}%"]} end)
   def full
     "#{first_name} #{last_name}"
   end
