@@ -69,7 +69,6 @@ class MembersController < ApplicationController
     members_only = params[:email_setup]["members_only"].to_i
     board_only = params[:email_setup]["board_only"].to_i
 
-    @recipients = "joel.gottlieb@gmail.com"
     @recipients = Member.emailers.map(&:email_1) if everyone == 1
     @recipients = Member.members_only.map(&:email_1).compact if members_only == 1
     @recipients = Member.board_only.map(&:email_1).compact if board_only == 1
