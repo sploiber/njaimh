@@ -6,9 +6,13 @@ class NJAIMHMailer < ActionMailer::Base
     @subject = subject
     @bcc = recipients
     @recipients = "dristaino@nj-aimh.org"
-    @attached_file_name = attached_file_name
-    # Attach only if we have something
-    attachments[@attached_file_name] = attached_file_data if @attached_file_name != nil
+    # Insist that there is actually a real file here. Not sure about the
+    # nil condition - it was producing spurious attachments.
+    if attached_file_name =~ /[a-z]/
+      @attached_file_name = attached_file_name
+      # Attach only if we have something
+      attachments[@attached_file_name] = attached_file_data if @attached_file_name != nil
+    end
     mail(:to => @recipients, :bcc => @bcc, :subject => @subject)
   end
 end
